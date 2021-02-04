@@ -3,25 +3,21 @@ ion-row {
 }
 
 h1{
-  color: #0055a5;
+  color: #005191;
   font-size: 3em;
   z-index: 999;
   margin-top: 40px;
 }
 
 h2 {
-  font-weight: 600;
-  font-size: 1.45em;
+  font-weight: 900;
+  font-size: 1.85em;
   line-height: 1.85em;
-  background: #faa71b;
+  background: rgb(66, 63, 57);
+  width: 300px;
   color: white;
   padding: 5px 0px 5px 20px;
-  margin-bottom: 24px;
   border-radius: 5px;
-}
-
-ion-select-option {
-  background: white;
 }
 
 .desciption {
@@ -29,7 +25,6 @@ ion-select-option {
   line-height: 1.6em;
   padding-bottom: 30px;
   border-bottom: 2px solid #f0f0f0;
-  color: #333;
 }
 
 .off{
@@ -41,11 +36,14 @@ ion-select-option {
   animation: slide-up 0.2s ease .5s forwards;
 }
 
+ul {
+  background: rgba(0,0,0,0.03);
+  padding: 35px;
+}
 
 li {
   font-size: 1.7em;
   margin: 10px 0px;
-  color: #0055a5;
 }
 
 @keyframes slide-up {
