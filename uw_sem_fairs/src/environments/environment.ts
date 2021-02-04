@@ -4,12 +4,14 @@
 
 import 'zone.js/dist/zone-error';
 
-const ip = '10.0.1.5';
+const ip = '10.0.1.4';
 const baseUrl = `http://${ip}:3000`;
+const fairsUrl = `http://${ip}:4000`;
 
 export const environment = {
   production: false,
-  url: baseUrl
+  url: baseUrl,
+  fairsUrl: fairsUrl
 };
 
 
