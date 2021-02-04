@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      <ion-title>Back</ion-title>
+      <p class="toolbar-title">Back</p>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -42,8 +42,8 @@
     <ion-row class="ion-justify-content-center">
       <ion-col class="agenda" size-xs="10" size-sm="10" size-md="8" size-lg="8">
         <h1>Agenda</h1>
-        <ion-list style="--background: white;">
-          <ion-item class="agenda-item" *ngFor="let item of agenda" lines="none">
+        <ion-list>
+          <ion-item class="agenda-item" *ngFor="let item of agenda" lines="">
             <ion-badge slot="start">{{item.time}}</ion-badge>
             <ion-label>
               <h2>{{item.title}}</h2>
