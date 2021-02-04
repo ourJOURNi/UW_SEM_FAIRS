@@ -66,7 +66,7 @@
     <ion-row  class="ion-justify-content-center">
       <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="8" size-lg="8">
         <div [className]="!selectedUsertype ? 'off' : 'on'">
-          <ion-button (click)="fairPage(this.fair, this.usertype)" class="orange-button"
+          <ion-button (click)="fairPage()" class="orange-button"
           [disabled]="!fair && !usertype">
             Next
           </ion-button>
