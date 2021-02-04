@@ -1,11 +1,11 @@
 <!-- Mobile version -->
 <ion-header class="ion-hide-lg-up">
   <ion-toolbar>
-    <img id="logo" src="../../../assets/United_Way_Logo_3.svg" />
+    <img id="logo" src="../../../assets/logos/UWSEM-Color.png" />
     <ion-buttons slot="end">
       <ion-button class="mobile-toolbar-button" (click)="fairsPage()" slot="end">Fairs</ion-button>
       <ion-button class="mobile-toolbar-button" (click)="resources()" slot="end">Resources</ion-button>
-      <ion-button class="mobile-toolbar-button" href="http://10.0.1.5:4200" slot="end">FYF</ion-button>
+      <ion-button class="mobile-toolbar-button" href="http://localhost:4200/" slot="end">FYF</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -428,8 +428,8 @@
 
       <!-- About United Way -->
       <ion-col id="united-way-description" size-xs="11" size-sm="10" size-md="10" size-lg="10" size-xl="6">
-        <div class="ion-text-left">
-          <img class="uw-logo" src="../../../assets/United_Way_Logo_3.svg" />
+        <div class="ion-text-center">
+          <img class="uw-logo" src="../../../assets/logos/UWSEM-Color.png" />
         </div>
         <h1>Who is United Way?</h1>
         <p>
@@ -438,9 +438,11 @@
           <br>
           United Way works with companies, governments, nonprofits and other organizations to address complex challenges on a worldwide scale. Our partners contribute more than money. Their ideas, volunteer power, in-kind support and more are helping build stronger communities.
         </p>
-        <br>
+        <p style="margin-bottom: 70px;" >
+          In 2005, United Way Community Services and United Way of Oakland County evolved and voted to create a new organization: United Way for Southeastern Michigan.
+        </p>
         <div class="ion-text-center">
-          <ion-button class="landing-page-button" href="https://www.unitedway.org/" target="_blank">Website</ion-button>
+          <a  href="https://unitedwaysem.org/about-us/" target="_blank">You can learn more about United Way Southeastern Michigan here</a>
           <strong>United Way Partners</strong>
         </div>
         <img class="partner-logo" src="../../../assets/logos/Ford_logo_flat.png" alt="" srcset="">

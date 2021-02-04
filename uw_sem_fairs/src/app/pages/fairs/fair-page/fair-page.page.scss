@@ -53,8 +53,9 @@ h1 {
 
 .fair-summary {
   padding: 10px;
-  font-size: 0.9em;
+  font-size: 1.1em;
   line-height: 1.3em;
+  color: #333;
 }
 
 #info {
@@ -132,6 +133,7 @@ h1 {
     top: -10px;
     font-size: 0.9em;
     line-height: 1.3em;
+    color: #333;
   }
 
   .divider {
@@ -174,13 +176,16 @@ h1 {
   margin: 0px 0px 15px 0px;
   position: relative;
   left: -15px;
+  --background: white;
   ion-badge {
     font-size: 1em;
     width: 4em;
     padding: 12px;
+    background: #0055a5;
   }
   h2{
     font-size: 1.3em;
+    color: #333;
   }
 }
 
@@ -196,7 +201,12 @@ h5 {
 ion-radio-group{
   h3 {
     margin-top: 80px;
+    color: #333;
   }
+}
+
+ion-list {
+  background: white;
 }
 
 .green-button {
