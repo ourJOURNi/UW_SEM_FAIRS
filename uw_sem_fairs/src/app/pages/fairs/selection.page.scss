@@ -1,6 +1,63 @@
 ion-row {
   margin-bottom: 20px;
 }
+.background-photo-small{
+  height: 250px;
+  background: url('../../../assets/photos/fairs-selection-page-image-small.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.background-photo-large{
+  height: 95vh;
+  background: url('../../../assets/photos/fairs-selection-page-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+ion-item {
+  --background: #faa71b;
+  border: none;
+  height: 50px;
+}
+.form-wrapper {
+  background: white;
+  padding: 2em;
+  box-shadow: 1px 1px 30px #2224;
+  border-radius: 10px;
+  position: relative;
+  top: 100px;
+
+  h3 {
+    color: #0055a5;
+  }
+
+  p {
+    color: #333;
+  }
+}
+ion-select::part(icon) {
+  color: white;
+  font-size: 2em;
+  opacity: 1;
+  position: relative;
+  left: 0px;
+}
+.select-icon-inner {
+  left: -5px;
+  margin-top: -6px;
+  border-top: 14px solid;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+ion-select {
+  width: 100%;
+  background: none;
+  color: white;
+  opacity: 1;
+  --placeholder-opacity: 1 !important;
+  --icon-opaacity: 1 !important;
+}
 
 h1{
   color: #0055a5;
@@ -25,7 +82,7 @@ ion-select-option {
 }
 
 .desciption {
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.6em;
   padding-bottom: 30px;
   border-bottom: 2px solid #f0f0f0;
@@ -39,6 +96,13 @@ ion-select-option {
 .on {
   opacity: 0;
   animation: slide-up 0.2s ease .5s forwards;
+}
+.green-button {
+  height: 50px;
+  width: 100%;
+  font-size: 1em;
+  --background: #2da847;
+  --border-radius: 5px;
 }
 
 

@@ -17,18 +17,16 @@ ion-fab-button {
 }
 
 h1 {
-  color: #005191;
-  margin-bottom: 20px;
+  color: #0055a5;
 }
 
 .usertype {
   text-transform: capitalize;
-  background: #faa71b;
-  width: auto;
-  color: white;
-  padding: 5px 0px 5px 15px;
+  color: #faa71b;
   border-radius: 5px;
-  margin-bottom: 0px;
+  margin-top: 131px;
+  font-weight: 800;
+  font-size: 3em;
 }
 
 .fair-date {
@@ -40,7 +38,6 @@ h1 {
 }
 
 .fair-address {
-  border-bottom: 1px solid #999;
   padding-bottom: 30px;
   position: relative;
   top: -20px;
@@ -52,14 +49,15 @@ h1 {
 }
 
 .fair-summary {
-  padding: 10px;
   font-size: 1.1em;
   line-height: 1.3em;
-  color: #333;
+  color: #111;
+  border-bottom: 1px solid #999;
+  padding-bottom: 40px;
 }
 
 #info {
-  background: #edf3f8;
+  // background: #edf3f8;
 }
 
 .agenda {
@@ -110,7 +108,7 @@ h1 {
 
   .partner-link {
     background: #edf3f8;
-    color: #005191;
+    color: #0055a5;
     padding: 8px 13px;
     font-weight: 500;
     border-radius: 5px;
@@ -121,11 +119,9 @@ h1 {
   }
 
   .organization {
-    background: #faa71b;
-    border-radius: 5px;
     margin-bottom: 25px;
-    color: white;
-    padding: 0.3em;
+    color: #faa71b;
+    font-size: 2em;
   }
 
   .partner-description{
