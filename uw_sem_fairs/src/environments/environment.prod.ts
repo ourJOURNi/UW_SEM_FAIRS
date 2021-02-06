@@ -1,4 +1,4 @@
-const ip = '10.0.1.4';
+const ip = '18.191.35.201';
 const baseUrl = `http://${ip}:3000`;
 const fairsUrl = `http://${ip}:4000`;
 

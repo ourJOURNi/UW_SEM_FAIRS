@@ -16,13 +16,14 @@ ion-row {
   background-repeat: no-repeat;
 }
 ion-item {
-  --background: #faa71b;
-  border: none;
+  --background: white;
+  color: #faa71b;
+  border: 2px solid #faa71b;
   height: 50px;
 }
 .form-wrapper {
   background: white;
-  padding: 2em;
+  padding: 1em;
   box-shadow: 1px 1px 30px #2224;
   border-radius: 10px;
   position: relative;
@@ -37,7 +38,7 @@ ion-item {
   }
 }
 ion-select::part(icon) {
-  color: white;
+  color: #faa71b;
   font-size: 2em;
   opacity: 1;
   position: relative;
@@ -53,7 +54,7 @@ ion-select::part(icon) {
 ion-select {
   width: 100%;
   background: none;
-  color: white;
+  color: #faa71b;
   opacity: 1;
   --placeholder-opacity: 1 !important;
   --icon-opaacity: 1 !important;
@@ -101,8 +102,13 @@ ion-select-option {
   height: 50px;
   width: 100%;
   font-size: 1em;
-  --background: #2da847;
+  --background: white;
+  --color: #2da847;
+  --border-color: #2da847;
+  --border-style: solid;
+  --border-width: 2px;
   --border-radius: 5px;
+  --box-shadow: none;
 }
 
 

@@ -22,6 +22,7 @@ export class FairStudentRegisterPage implements OnInit, OnDestroy {
   city: string;
   state: string;
   zip: string;
+  summary: string;
   fairName: string;
   studentObject = {
     id: '',
@@ -114,9 +115,9 @@ export class FairStudentRegisterPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.resgisterForm = this.formBuilder.group({
-      name: ['Eddie', Validators.required],
-      email: ['eddielacrosse2@gmail.com', [Validators.required, Validators.email]],
-      phone: ['7342237792', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]]
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]]
     });
 
     this.studentObject.id = this.navParams.get('id');
@@ -126,6 +127,7 @@ export class FairStudentRegisterPage implements OnInit, OnDestroy {
     this.address = this.navParams.get('address');
     this.fairName = this.navParams.get('fairName');
     this.date = this.navParams.get('date');
+    this.summary = this.navParams.get('summary');
   }
 
   cancel() {

@@ -22,7 +22,7 @@
   <div id="info">
     <ion-grid>
       <ion-row class="ion-justify-content-center">
-        <ion-col class="fair-header" size-xs="10" size-sm="10" size-md="8" size-lg="8">
+        <ion-col class="fair-header" size-xs="10" size-sm="10" size-md="8" size-lg="6">
           <div>
             <h2 class="usertype">{{usertype}} Sign Up</h2>
             <h1 class="fair-name">{{fairName}}</h1>
@@ -40,7 +40,7 @@
   <!-- Agenda -->
   <div>
     <ion-row class="ion-justify-content-center">
-      <ion-col class="agenda" size-xs="10" size-sm="10" size-md="8" size-lg="8">
+      <ion-col class="agenda" size-xs="10" size-sm="10" size-md="8" size-lg="6">
         <h1>Agenda</h1>
         <ion-list style="--background: white;">
           <ion-item class="agenda-item" *ngFor="let item of agenda" lines="none">
@@ -70,7 +70,7 @@
   <div #faq id="faq" [className]="faqPopIn ? 'faq' : 'off'">
     <ion-grid>
       <ion-row class="ion-justify-content-center">
-        <ion-col  size-xs="11" size-sm="10" size-md="8" size-lg="8">
+        <ion-col  size-xs="11" size-sm="10" size-md="8" size-lg="6">
           <ion-list>
             <h3 style="margin-bottom: 35px;">Frequently Asked Questions</h3>
             <div *ngFor="let question of faqInfo">
@@ -88,7 +88,7 @@
   <div #boothPartners id="boothPartners" [className]="boothPartnersPopIn ? 'booth-partners' : 'off'">
     <ion-grid>
       <ion-row class="ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
+        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="6">
           <h1 style="margin-top: 40px;">Booth Partners</h1>
           <div *ngFor="let partner of partners">
             <div *ngIf="partner.verified === true">
@@ -114,7 +114,7 @@
   <div #survey id="survey" [className]="surveyPopIn ? 'survey' : 'off'">
     <ion-grid>
       <ion-row class="ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
+        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="6">
           <h1 style="margin-top: 40px;">Survey</h1>
           <ion-list class="line-input">
             <!-- Post Suvery Questions -->
@@ -280,7 +280,7 @@
 
           </ion-list>
         </ion-col>
-        <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="8" size-lg="8">
+        <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="8" size-lg="6">
           <ion-button class="green-button" (click)="submitSurvey()"
           [disabled]=" !this.email.value || !this.surveyObject.question1.answer || !this.surveyObject.question2.answer || !this.surveyObject.question3.answer || !this.surveyObject.question4.answer || !this.surveyObject.question5.answer">
             Submit

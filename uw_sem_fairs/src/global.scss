@@ -44,7 +44,7 @@ ion-grid {
 }
 
 ion-header {
-  background: none;
+  // background: none;
 }
 
 ion-content {
@@ -68,7 +68,8 @@ p {
     // --background: white;
       --border-color: transparent!important;
       --highlight-height: 0;
-      height: 40px;
+      height: 50px;
+      color: #222;
       margin: 8px auto;
       border: 2px solid #0055a5;
       transition: 0.2s;
@@ -93,6 +94,11 @@ p {
         overflow-wrap: break-word;
         display: inline;
       }
+      ion-input {
+        color: #0055a5;
+        font-weight: 600;
+        font-size: 1.1em;
+      }
   }
 }
 
@@ -106,5 +112,12 @@ ion-select {
   /* Set a different placeholder color */
 
   /* Set full opacity on the placeholder */
+}
+.error-message {
+  color: red;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-weight: 600;
 }
 

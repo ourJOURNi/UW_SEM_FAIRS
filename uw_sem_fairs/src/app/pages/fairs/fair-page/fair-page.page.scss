@@ -18,6 +18,8 @@ ion-fab-button {
 
 h1 {
   color: #0055a5;
+  margin-bottom: 54px;
+  font-size: 2em;
 }
 
 .usertype {
@@ -26,7 +28,7 @@ h1 {
   border-radius: 5px;
   margin-top: 131px;
   font-weight: 800;
-  font-size: 3em;
+  font-size: 2.3em;
 }
 
 .fair-date {
@@ -177,7 +179,9 @@ h1 {
     font-size: 1em;
     width: 4em;
     padding: 12px;
-    background: #0055a5;
+    background: white;
+    color: #0055a5;
+    border: 2px solid #0055a5;
   }
   h2{
     font-size: 1.3em;

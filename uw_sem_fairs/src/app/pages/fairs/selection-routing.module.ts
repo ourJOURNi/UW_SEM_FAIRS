@@ -8,10 +8,10 @@ const routes: Routes = [
     path: '',
     component: SelectionPage
   },
-  // {
-  //   path: 'fair-page/',
-  //   loadChildren: () => import('./fair-page/fair-page.module').then( m => m.FairPagePageModule)
-  // }
+  {
+    path: 'fair-page/:id/:fair/:date/:address/:city/:state/:zip/:usertype/:summary/:agenda/:faq/:partners',
+    loadChildren: () => import('./fair-page/fair-page.module').then( m => m.FairPagePageModule)
+  }
 ];
 
 @NgModule({
