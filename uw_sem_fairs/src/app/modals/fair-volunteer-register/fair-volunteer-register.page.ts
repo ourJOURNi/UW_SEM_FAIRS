@@ -34,4 +34,9 @@ export class FairVolunteerRegisterPage implements OnInit {
     this.modal.dismiss();
    }
 
+   registerVolunteer() {
+     console.log('Registering Volunteer...');
+     
+   }
+
 }

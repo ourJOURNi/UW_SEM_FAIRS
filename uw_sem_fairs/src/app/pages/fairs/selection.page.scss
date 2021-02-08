@@ -17,8 +17,8 @@ ion-row {
 }
 ion-item {
   --background: white;
-  color: #faa71b;
-  border: 2px solid #faa71b;
+  color: #0055a5;
+  border: 2px solid #0055a5;
   height: 50px;
 }
 .form-wrapper {
@@ -38,7 +38,7 @@ ion-item {
   }
 }
 ion-select::part(icon) {
-  color: #faa71b;
+  color: #0055a5;
   font-size: 2em;
   opacity: 1;
   position: relative;
@@ -54,7 +54,7 @@ ion-select::part(icon) {
 ion-select {
   width: 100%;
   background: none;
-  color: #faa71b;
+  color: #0055a5;
   opacity: 1;
   --placeholder-opacity: 1 !important;
   --icon-opaacity: 1 !important;
@@ -62,7 +62,7 @@ ion-select {
 
 h1{
   color: #0055a5;
-  font-size: 3em;
+  font-size: 2em;
   z-index: 999;
   margin-top: 40px;
 }
@@ -98,16 +98,17 @@ ion-select-option {
   opacity: 0;
   animation: slide-up 0.2s ease .5s forwards;
 }
-.green-button {
+.orange-button {
   height: 50px;
   width: 100%;
   font-size: 1em;
-  --background: white;
-  --color: #2da847;
-  --border-color: #2da847;
+  font-weight: 600;
+  --background: none;
+  --color: #faa71b;
+  --border-color: #faa71b;
   --border-style: solid;
   --border-width: 2px;
-  --border-radius: 5px;
+  --border-radius: 3px;
   --box-shadow: none;
 }
 

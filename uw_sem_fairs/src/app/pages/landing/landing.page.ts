@@ -14,7 +14,7 @@ export class LandingPage implements OnInit {
 
   slideOptions = {
     autoplay: {
-      delay: 5000
+      delay: 4000
     },
     speed: 1000
   };
@@ -85,9 +85,9 @@ export class LandingPage implements OnInit {
     const moon = document.getElementById('Moon');
 
 
-    lady.style.display = 'none';
-    message.style.display = 'none';
-    messageTwo.style.display = 'none';
+    // lady.style.display = 'none';
+    // message.style.display = 'none';
+    // messageTwo.style.display = 'none';
     studentShape.style.display = 'none';
     chaporoneShape.style.display = 'none';
     volunteerShape.style.display = 'none';
@@ -105,14 +105,14 @@ export class LandingPage implements OnInit {
     moon.style.display = 'block';
 
 
-    if (scrolled > 3) {
-      lady.style.display = 'block';
+    if (scrolled > 6.3) {
+      // lady.style.display = 'block';
     }
-    if (scrolled > 3.24) {
-      message.style.display = 'block';
+    if (scrolled > 6.5) {
+      // message.style.display = 'block';
     }
-    if (scrolled > 3.3) {
-      messageTwo.style.display = 'block';
+    if (scrolled > 6.7) {
+      // messageTwo.style.display = 'block';
     }
 
     if (scrolled > 11.9) {

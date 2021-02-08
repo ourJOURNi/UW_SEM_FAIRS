@@ -1,37 +1,29 @@
-<!-- Mobile Header -->
 <ion-header>
-</ion-header>
-
-
-<ion-content>
   <ion-toolbar>
     <ion-buttons (click)="cancel()" slot="start">
       <ion-icon slot="end" name="close"></ion-icon>
-      <p class="toolbar-title">Register New Partner</p>
+      <ion-title>Register as Booth Partner</ion-title>
     </ion-buttons>
   </ion-toolbar>
+</ion-header>
+
+<ion-content>
   <ion-grid>
     <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
-        <h1>Tech Fair</h1>
-        <h5>Date</h5>
-        <h5>Address</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta suscipit a expedita sed nostrum reprehenderit assumenda sequi veritatis rerum magnam omnis minima ratione, odio quidem adipisci possimus qui molestiae! Quisquam!</p>
-      </ion-col>
       <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
         <form [formGroup]="resgisterForm" (ngSubmit)="registerPartner()" id="proPicForm">
           <ion-list class="line-input">
 
             <!-- First & Last Name -->
             <ion-item>
-              <ion-label position="floating">First & Last Name <ion-text color="danger">*</ion-text></ion-label>
-              <ion-input required formControlName="name" type="text"></ion-input>
+              <ion-input required formControlName="name"
+              placeholder="Name" type="text"></ion-input>
             </ion-item>
 
             <!-- Email -->
             <ion-item>
-              <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
-              <ion-input required formControlName="email" type="email"></ion-input>
+              <ion-input required formControlName="email"
+              placeholder="Email" type="email"></ion-input>
             </ion-item>
 
             <!-- Email Validation-->
@@ -49,19 +41,23 @@
 
             <!-- Company/Organization/School -->
             <ion-item>
-              <ion-label position="floating">Name of Organization <ion-text color="danger">*</ion-text></ion-label>
-              <ion-input required formControlName="organization" type="text"></ion-input>
+              <ion-input required formControlName="organization"
+              placeholder="Company" type="text"></ion-input>
             </ion-item>
 
             <!-- Phone -->
             <ion-item>
-              <ion-label position="floating">Phone Number
-                <ion-text color="danger">*</ion-text>
-              </ion-label>
                 <ion-input
                   formControlName="phone"
                   maxlength="10"
-                  minlength="10" placeholder="#"></ion-input>
+                  minlength="10" placeholder="Phone # (xx)xxx-xxxx"></ion-input>
+            </ion-item>
+
+            <!-- URL -->
+            <ion-item>
+                <ion-input
+                  formControlName="url"
+                  maxlength="500" placeholder="Website URL">http://</ion-input>
             </ion-item>
 
             <!-- Phone Validation-->
@@ -79,9 +75,6 @@
 
             <!-- Gender -->
             <ion-item>
-             <ion-label position="floating">Gender
-               <ion-text color="danger">*</ion-text>
-             </ion-label>
                <ion-select (ionChange)="selectGender($event)"
                placeholder="Select School">
                  <ion-select-option value="Male">Male</ion-select-option>
@@ -90,52 +83,47 @@
            </ion-item>
 
            <!-- Lunch -->
-           <ion-item>
-            <ion-label position="floating">Lunch
-              <ion-text color="danger">*</ion-text>
-            </ion-label>
+           <ion-item style="margin-bottom: 10px;">
               <ion-select (ionChange)="selectLunch($event)"
-              placeholder="Select School">
+              placeholder="Select Lunch">
                 <ion-select-option *ngFor="let lunch of lunches" value="{{lunch}}">{{lunch}}</ion-select-option>
               </ion-select>
           </ion-item>
 
+          <!-- Logo -->
+          <p style="margin-bottom: 42px;">Please upload a logo for your organization.</p>
           <input
             name="booth-partner-logo"
             (change)="getFormData($event)" placeholder="Upload Image"
             type="file"/>
 
-            <div
-            #defaultPicture
-            id="default-picture-wrapper"
-            *ngIf="!uploadedPhoto">
-              <p>Please upload a logo for your organization.</p>
-            </div>
-
           <!-- User has uploaded cropped profile picture -->
-          <img
-            id="upload-picture-wrapper"
+            <p style="font-size: 0.8em; color: #999;" *ngIf="!uploadedPhoto">No Photo uploaded.</p>
+            <img
+            class="upload-picture-wrapper"
             *ngIf="uploadedPhoto"
             src="{{uploadedPhotoURL}}" />
 
-            <ion-textarea #colleguesChars
-            maxlength="150"
-            formControlName="colleagues"
-            placeholder="Please enter names of collegeauges that will be helping you, seperated by commas. ">
+            <p>Please tell us the names of your collegues that will be joining you. Seperate each name by a comma ( , ).</p>
+            <!-- Phone -->
+            <ion-item>
+              <ion-input
+                formControlName="colleagues"
+                maxlength="150" placeholder="Example: John, Jane, Terry"></ion-input>
+          </ion-item>
 
-            </ion-textarea>
-            <p class="char-limit">{{colleguesChars.value.length}} / 150 character limit</p>
-
+            <p>Please enter a description of what your organization does. This will be displayed for students who want to have more information about your organization. </p>
             <ion-textarea #descriptionChars
             maxlength="600"
-            formControlName="description" placeholder="Please enter a description of what your organization does. This will be displayed for students who want to have more information about your organization. ">
+            rows="10"
+            formControlName="description" placeholder="Type here">
             </ion-textarea>
-            <p class="char-limit">{{descriptionChars.value.length}} / 600 character limit</p>
+            <p class="error-message">{{descriptionChars.value.length}} / 600 character limit</p>
 
           </ion-list>
 
           <div style="text-align: center; margin: 100px auto">
-            <ion-button type="submit" class="orange-button">
+            <ion-button type="submit" class="green-button">
               Register
             </ion-button>
           </div>
@@ -149,7 +137,7 @@
       <ion-col class="ion-text-center" size="8">
         <ion-icon [className]="registered ? 'slide-up' : 'off'" name="checkmark-circle-outline" size="large" color="success" ></ion-icon>
         <h3>Thank you for Registering as a Partner for Tech Fair.</h3>
-        <ion-button class="blue-button" (click)="confirm()">
+        <ion-button class="green-button" (click)="confirm()">
           Done
         </ion-button>
       </ion-col>

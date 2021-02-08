@@ -4,9 +4,32 @@ ion-toolbar {
   position: relative;
   top: -5px;
 }
-
+h1{
+  margin-top: 50px;
+  color: #0055a5;
+}
+h3, h5 {
+  color: #222;
+}
+p{
+  color: #222;
+  font-size: 1.1em;
+}
 ion-header {
-  background: #21ce99;
+  background: #0055a5;
+  padding-top: 8px;
+}
+ion-list-header{
+  padding: 0;
+}
+ion-item {
+  padding: 0.4em 0;
+  margin: 32px auto;
+
+  ion-label {
+    font-weight: 600;
+    color: #0055a5;
+  }
 }
 
 .confirm-popout {
@@ -39,6 +62,19 @@ ion-header {
 
 ion-list-header{
   margin-top: 100px;
+}
+
+.green-button {
+  height: 50px;
+  width: 100%;
+  font-size: 1em;
+  --background: white;
+  --color: #2da847;
+  --border-color: #2da847;
+  --border-style: solid;
+  --border-width: 2px;
+  --border-radius: 5px;
+  --box-shadow: none;
 }
 
 @keyframes popout {

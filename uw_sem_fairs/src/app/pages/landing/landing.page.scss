@@ -1,9 +1,17 @@
 ion-grid {
     padding: 0;
 }
+.background-photo-landing-header{
+    height: 90vh;
+    background: url('../../../assets/photos/landing-page-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 
 ion-header {
-    background: white;
+    --background: none;
      h1 {
         position: relative;
         top: -18px;
@@ -31,6 +39,7 @@ ion-header {
   }
 
 ion-toolbar {
+
     color: #0055a5;
 
     #logo {
@@ -38,7 +47,7 @@ ion-toolbar {
     }
 
     // height: 100%;
-    --background: #fff;
+    // --background: #fff;
     --padding-start: 15px;
     --padding-end: 15px;
     --padding-top: 10px;
@@ -66,9 +75,16 @@ ion-header > ion-toolbar {
     border-bottom: 5px solid #fab716;
 }
 
-ion-slides {
+.desktop-slides {
     width: 100%;
     margin: -3px 0;
+    background: rgba(255,255,255,1);
+    border-radius: 10px;
+    top: 112px;
+    box-shadow: 2px 3px 42px #888;
+}
+.mobile-slides {
+
 }
 
 .swiper-pagination {
@@ -77,7 +93,8 @@ ion-slides {
     padding-bottom: 3px;
 }
 
-ion-slide {
+// Mobile
+.mobile-slide {
     display: block;
     height: 400px;
     // background: rgb(0,81,145);
@@ -115,9 +132,58 @@ ion-slide {
     }
 }
 
+// Desktop
+.desktop-slide {
+    display: inline-block;
+    height: 400px;
+    text-align: left;
+    background: none;
+    padding: 1em 2em;
+    // background: rgb(0,81,145);
+    // background: linear-gradient(0deg, rgba(0, 81, 143, 1) 11%, rgba(40,107,160,0.5) 50%, rgba(172, 193, 209, 0) 64%);
+
+    .slide-text-wrapper {
+        padding: 0px 0px;
+        margin: 0 auto 0px auto;
+        height: 450px;
+        padding-top: 40px;
+        width: auto;
+        background: none;
+        img {
+            height: 80px;
+        }
+
+        h2 {
+            margin-top: 2.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0055a5;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #fff;
+            width: 315px;
+            margin: 16px auto;
+        }
+
+        .orange-button {
+            --background: #0055a5;
+            height: 45px;
+            width: 150px;
+            font-weight: 600;
+            font-size: 1.02em;
+            border-radius: 100px;
+            margin-top: 20px;
+        }
+    }
+}
+
+
 h1{
-    margin-top: 60px;
-    font-size: 31px;
+    margin-top: 200px;
+    font-size: 3em;
     font-weight: 600;
     color: #0055a5;
 }
@@ -125,7 +191,7 @@ h1{
 
 .illustration {
     // background: lightgray;
-    height: auto;
+    height: 50vh;
     width: 100%;
     margin: -10px auto;
 }
@@ -426,14 +492,14 @@ ion-footer ion-button {
 @keyframes lady-slide {
     from {
         opacity: 0;
-        transform: translate(80%, 60%);
-        -webkit-transform: translate(80%, 60%);
+        transform: translate(80%, 80%);
+        -webkit-transform: translate(80%, 80%);
         -moz-transform: translate(-80px, 80px);
     }
     to {
         opacity: 1;
-        transform: translate(70%, 50%);
-        -webkit-transform: translate(70%, 50%);
+        transform: translate(80%, 60%);
+        -webkit-transform: translate(80%, 60%);
         -moz-transform: translate(800px, 370px);
     }
 }

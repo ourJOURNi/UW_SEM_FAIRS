@@ -60,8 +60,8 @@ export class FairChaperoneRegisterPage implements OnInit, OnDestroy {
 
     ngOnInit() {
       this.resgisterForm = this.formBuilder.group({
-        name: ['Eddie', Validators.required],
-        email: ['eddielacrosse2@gmail.com', [Validators.required, Validators.email]],
+        name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
         phone: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]],
       });
       this.chaperoneObject.id = this.navParams.get('id');

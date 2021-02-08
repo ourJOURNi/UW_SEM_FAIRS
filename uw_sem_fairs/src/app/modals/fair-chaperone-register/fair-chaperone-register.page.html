@@ -1,15 +1,13 @@
-<!-- Mobile Header -->
 <ion-header>
-</ion-header>
-
-
-<ion-content>
   <ion-toolbar>
     <ion-buttons (click)="cancel()" slot="start">
       <ion-icon slot="end" name="close"></ion-icon>
-      <p class="toolbar-title">Register New Chaperone</p>
+      <ion-title>Register as Chaperone</ion-title>
     </ion-buttons>
   </ion-toolbar>
+</ion-header>
+
+<ion-content>
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
@@ -24,13 +22,11 @@
 
             <!-- First & Last Name -->
             <ion-item>
-              <ion-label position="floating">First & Last Name <ion-text color="danger">*</ion-text></ion-label>
               <ion-input required formControlName="name" type="text"></ion-input>
             </ion-item>
 
             <!-- Email -->
             <ion-item>
-              <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
               <ion-input required formControlName="email" type="email"></ion-input>
             </ion-item>
 
@@ -49,10 +45,8 @@
 
             <!-- Phone -->
             <ion-item>
-              <ion-label position="floating">Phone
-                <ion-text color="danger">*</ion-text>
-              </ion-label>
               <ion-input required
+              placeholder="Phone # (xxx)xxx-xxx"
               maxlength="10"
               minlength="10" formControlName="phone" type="phone"></ion-input>
             </ion-item>
@@ -71,9 +65,6 @@
 
             <!-- School -->
             <ion-item>
-              <ion-label position="floating">School
-                <ion-text color="danger">*</ion-text>
-              </ion-label>
                 <ion-select (ionChange)="selectSchool($event)"
                 placeholder="Select School">
                   <ion-select-option *ngFor="let school of schools" value="{{school}}">{{school}}</ion-select-option>
@@ -82,11 +73,8 @@
 
              <!-- Gender -->
              <ion-item>
-              <ion-label position="floating">Gender
-                <ion-text color="danger">*</ion-text>
-              </ion-label>
                 <ion-select (ionChange)="selectGender($event)"
-                placeholder="Select School">
+                placeholder="Select Gender">
                   <ion-select-option value="Male">Male</ion-select-option>
                   <ion-select-option value="Female">Female</ion-select-option>
                 </ion-select>
@@ -94,12 +82,11 @@
 
             <!-- Lunch -->
             <ion-item>
-              <ion-label position="floating">Lunch
-                <ion-text color="danger">*</ion-text>
-              </ion-label>
                 <ion-select (ionChange)="selectLunch($event)"
-                placeholder="Select School">
-                  <ion-select-option *ngFor="let lunch of lunches" value="{{lunch}}">{{lunch}}</ion-select-option>
+                placeholder="Select Lunch">
+                <ion-select-option value="ham">Ham</ion-select-option>
+                <ion-select-option value="turkey">Turkey</ion-select-option>
+                <ion-select-option value="veggie">Veggie</ion-select-option>
                 </ion-select>
             </ion-item>
 
@@ -120,7 +107,7 @@
       <ion-col class="ion-text-center" size="8">
         <ion-icon [className]="registered ? 'slide-up' : 'off'" name="checkmark-circle-outline" size="large" color="success" ></ion-icon>
         <h3>Thank you for Registering as a Chaperone for Tech Fair.</h3>
-        <ion-button class="blue-button" (click)="confirm()">
+        <ion-button class="green-button" (click)="confirm()">
           Done
         </ion-button>
       </ion-col>

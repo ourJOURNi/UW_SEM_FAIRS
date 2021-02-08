@@ -1,4 +1,3 @@
-<!-- Mobile Header -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons (click)="cancel()" slot="start">
@@ -7,7 +6,6 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content>
   <ion-grid>
@@ -20,7 +18,7 @@
       </ion-col>
 
       <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="10">
-        <h3 style="margin-top: 100px;">Student Interests</h3>
+        <h3 style="margin-top: 100px;">Student Information</h3>
         <form [formGroup]="resgisterForm" (ngSubmit)="registerStudent()">
           <ion-list class="line-input">
 
@@ -52,7 +50,7 @@
             <!-- Phone -->
             <ion-item>
               <ion-input
-              placeholder="Phone"  required formControlName="phone" type="phone" maxlength="10" minlength="10"></ion-input>
+              placeholder="Phone # (xxx)xxx-xxx"  required formControlName="phone" type="phone" maxlength="10" minlength="10"></ion-input>
             </ion-item>
 
             <!-- Phone Validation-->
@@ -144,11 +142,10 @@
             <!-- Question 2 -->
             <ion-radio-group
             required (ionChange)="question2Handler($event)">
-              <ion-list-header>
-                <h3>Question 2
-                  <ion-text color="danger">*</ion-text></h3>
-                  <p>This is question 2?</p>
-              </ion-list-header>
+            <ion-list-header>
+              <h3>Question 2</h3>
+            </ion-list-header>
+            <p>This is question 2?</p>
               <ion-item>
                 <ion-label>Cord</ion-label>
                 <ion-radio value="cord"></ion-radio>
@@ -175,11 +172,10 @@
             <ion-radio-group
             required
             (ionChange)="question3Handler($event)">
-              <ion-list-header>
-                <h3>Question 3
-                <p>This is question 1?</p>
-                  <ion-text color="danger">*</ion-text></h3>
-              </ion-list-header>
+            <ion-list-header>
+              <h3>Question 3</h3>
+            </ion-list-header>
+            <p>This is question 3?</p>
               <ion-item>
                 <ion-label>Cord</ion-label>
                 <ion-radio value="cord"></ion-radio>
@@ -206,12 +202,10 @@
             <ion-radio-group
             required
             (ionChange)="question4Handler($event)">
-              <ion-list-header>
-                <h3>Question 4
-                  <ion-text color="danger">*</ion-text>
-                </h3>
-                <p>This is question 1?</p>
-              </ion-list-header>
+            <ion-list-header>
+              <h3>Question 4</h3>
+            </ion-list-header>
+            <p>This is question 4?</p>
               <ion-item>
                 <ion-label>Cord</ion-label>
                 <ion-radio value="cord"></ion-radio>
@@ -238,12 +232,10 @@
             <ion-radio-group
             required
             (ionChange)="question5Handler($event)">
-              <ion-list-header>
-                <h3>Question 5
-                <p>This is question 1?</p>
-                  <ion-text color="danger">*</ion-text>
-                </h3>
-              </ion-list-header>
+            <ion-list-header>
+              <h3>Question 5</h3>
+            </ion-list-header>
+            <p>This is question 5?</p>
               <ion-item>
                 <ion-label>Cord</ion-label>
                 <ion-radio value="cord"></ion-radio>

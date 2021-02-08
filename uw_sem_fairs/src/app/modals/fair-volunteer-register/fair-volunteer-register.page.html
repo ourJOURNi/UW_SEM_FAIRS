@@ -1,15 +1,13 @@
-<!-- Mobile Header -->
 <ion-header>
-</ion-header>
-
-
-<ion-content>
   <ion-toolbar>
     <ion-buttons (click)="cancel()" slot="start">
       <ion-icon slot="end" name="close"></ion-icon>
-      <p class="toolbar-title">Register New Volunteer</p>
+      <ion-title>Register New Volunteer</ion-title>
     </ion-buttons>
   </ion-toolbar>
+</ion-header>
+
+<ion-content>
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
@@ -19,12 +17,100 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta suscipit a expedita sed nostrum reprehenderit assumenda sequi veritatis rerum magnam omnis minima ratione, odio quidem adipisci possimus qui molestiae! Quisquam!</p>
       </ion-col>
       <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
-        <div style="text-align: center; margin: 100px auto">
-          <ion-button type="submit" class="orange-button">
-            Register
-          </ion-button>
-        </div>
+        <form [formGroup]="resgisterForm" (ngSubmit)="registerVolunteer()">
+          <ion-list class="line-input">
+
+            <!-- First & Last Name -->
+            <ion-item>
+              <ion-input required formControlName="name" type="text"></ion-input>
+            </ion-item>
+
+            <!-- Email -->
+            <ion-item>
+              <ion-input required formControlName="email" type="email"></ion-input>
+            </ion-item>
+
+            <!-- Email Validation-->
+            <!-- <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validationMessasges.email">
+                    <div class="error-message"
+                    *ngIf="resgisterForm
+                      .get('email')
+                      .hasError(validation.type) && (resgisterForm.get('email')
+                      .dirty || resgisterForm.get('email').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+            </div> -->
+
+            <!-- Phone -->
+            <ion-item>
+              <ion-input required
+              placeholder="Phone # (xxx)xxx-xxx"
+              maxlength="10"
+              minlength="10" formControlName="phone" type="phone"></ion-input>
+            </ion-item>
+            <!-- Phone Validation-->
+            <!-- <div class="validation-errors">
+              <ng-container *ngFor="let validation of validationMessasges.phone">
+                <div class="error-message"
+                *ngIf="resgisterForm
+                  .get('phone')
+                  .hasError(validation.type) && (resgisterForm.get('phone')
+                  .dirty || resgisterForm.get('phone').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div> -->
+
+            <!-- School -->
+            <!-- <ion-item>
+                <ion-select (ionChange)="selectSchool($event)"
+                placeholder="Select School">
+                  <ion-select-option *ngFor="let school of schools" value="{{school}}">{{school}}</ion-select-option>
+                </ion-select>
+            </ion-item> -->
+
+             <!-- Gender -->
+             <!-- <ion-item>
+                <ion-select (ionChange)="selectGender($event)"
+                placeholder="Select Gender">
+                  <ion-select-option value="Male">Male</ion-select-option>
+                  <ion-select-option value="Female">Female</ion-select-option>
+                </ion-select>
+            </ion-item> -->
+
+            <!-- Lunch -->
+            <!-- <ion-item>
+                <ion-select (ionChange)="selectLunch($event)"
+                placeholder="Select Lunch">
+                <ion-select-option value="ham">Ham</ion-select-option>
+                <ion-select-option value="turkey">Turkey</ion-select-option>
+                <ion-select-option value="veggie">Veggie</ion-select-option>
+                </ion-select>
+            </ion-item> -->
+
+          </ion-list>
+
+          <div style="text-align: center; margin: 100px auto">
+            <ion-button type="submit" class="green-button">
+              Register
+            </ion-button>
+          </div>
+        </form>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <!-- <ion-grid *ngIf="registered">
+    <ion-row class="ion-justify-content-center ion-align-items-center confirm-popout">
+      <ion-col class="ion-text-center" size="8">
+        <ion-icon [className]="registered ? 'slide-up' : 'off'" name="checkmark-circle-outline" size="large" color="success" ></ion-icon>
+        <h3>Thank you for Registering as a Volunteer for Tech Fair.</h3>
+        <ion-button class="green-button" (click)="confirm()">
+          Done
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
 </ion-content>

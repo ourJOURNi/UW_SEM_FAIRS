@@ -17,6 +17,8 @@ export class ImageCropperPage implements OnInit, AfterViewInit {
   public imageDestination: string;
   private cropper: Cropper;
   uploadedPhotoURL;
+  uploadedPhoto = false;
+  formData: FormData;
 
   constructor(
     private modal: ModalController,

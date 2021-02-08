@@ -27,6 +27,7 @@ export class FairPartnerRegisterPage implements OnInit, OnDestroy {
     logo: '',
     phone: '',
     colleagues: '',
+    url: '',
     description: '',
     email: '',
     gender: '',
@@ -67,10 +68,11 @@ export class FairPartnerRegisterPage implements OnInit, OnDestroy {
     this.resgisterForm = this.formBuilder.group({
       name: ['Eddie', Validators.required],
       email: ['eddielacrosse2@gmail.com', [Validators.required, Validators.email]],
-      phone: ['7342237792', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]],
-      organization: ['Journi', [Validators.required]],
-      description: ['This is a description', [Validators.required]],
-      colleagues: ['Eddie', [Validators.required]],
+      phone: ['Journi', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]],
+      organization: ['7342237792', [Validators.required]],
+      url: ['google.com', [Validators.required]],
+      description: ['This is my description', [Validators.required]],
+      colleagues: ['Eddie, Erin, Tracy, Mekco', [Validators.required]],
     });
 
     this.partnerObject.id = this.navParams.get('id');
@@ -111,7 +113,7 @@ getFormData(event) {
 
   reader.addEventListener('load',  async () => {
     this.uploadedPhotoURL = reader.result;
-    // console.log('Before cropping: ' + reader.result);
+    console.log('Before cropping: ' + reader.result);
     await this.cropPhoto(this.uploadedPhotoURL);
   }, true);
 
@@ -134,8 +136,7 @@ async cropPhoto(uploadedPhotoURL) {
 
   _modal.onDidDismiss().then(data => {
     this.uploadedPhotoURL = data.data;
-    console.log('After cropping: ' +  data);
-
+    console.log('After cropping: ' +  this.uploadedPhotoURL);
   });
 }
 
@@ -151,6 +152,7 @@ async cropPhoto(uploadedPhotoURL) {
   this.partnerObject.email = this.resgisterForm.value['email'];
   this.partnerObject.phone = this.resgisterForm.value['phone'];
   this.partnerObject.colleagues = this.resgisterForm.value['colleagues'];
+  this.partnerObject.colleagues = this.resgisterForm.value['url'];
   this.partnerObject.organization = this.resgisterForm.value['organization'];
   this.partnerObject.description = this.resgisterForm.value['description'];
 
@@ -170,6 +172,7 @@ async cropPhoto(uploadedPhotoURL) {
             !this.partnerObject.phone ||
             !this.partnerObject.gender ||
             !this.partnerObject.email ||
+            !this.partnerObject.url ||
             !this.partnerObject.logo ||
             !this.partnerObject.organization ||
             !this.partnerObject.description ||
@@ -179,7 +182,7 @@ async cropPhoto(uploadedPhotoURL) {
               console.log(this.partnerObject);
               return this.presentFormAlert();
 
-            } 
+            }
       });
   }
  }
