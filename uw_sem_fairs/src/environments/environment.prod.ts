@@ -1,4 +1,6 @@
-const ip = 'fairs.findyourfuturesem.org';
+// Fairs Production
+
+const ip = 'localhost';
 const baseUrl = `http://${ip}:4000`;
 
 export const environment = {
