@@ -1,7 +1,7 @@
 // Fairs Production
 
 const ip = 'localhost';
-const baseUrl = `http://${ip}:4000`;
+const baseUrl = `http://${ip}`;
 
 export const environment = {
   production: true,
