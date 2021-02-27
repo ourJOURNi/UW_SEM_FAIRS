@@ -1,7 +1,7 @@
 // Fairs Production
 
-const ip = 'localhost';
-const baseUrl = `http://${ip}`;
+const ip = 'fairs.findyourfuturesem.org/';
+const baseUrl = `https://${ip}`;
 
 export const environment = {
   production: true,
