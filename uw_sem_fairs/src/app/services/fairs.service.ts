@@ -26,10 +26,10 @@ export class FairsService {
     return this.http.get(`${this.BACKEND_URL}/api/fairs`);
   }
 
-  getFair(name) {
-    console.log(name);
+  getFair(id) {
+    console.log(id);
     console.log('id from fairs service');
-    return this.http.post(`${this.BACKEND_URL}/api/fairs/fair`, {name});
+    return this.http.post(`${this.BACKEND_URL}/api/fairs/fair`, {id});
   }
 
   registerStudent(student) {

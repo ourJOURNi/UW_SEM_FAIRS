@@ -1,9 +1,35 @@
 <ion-app>
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-hide-md-down"  size="12">
+        <ion-toolbar id="desktop-toolbar">
+          <ion-buttons slot="start">
+            <ion-button (click)="homePage()">
+              <img style="padding-left: 40px;" src="../../../assets/uwse_logo.png" alt="" srcset="">
+            </ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button [routerLink]="['/home']">
+              Home
+            </ion-button>
+            <ion-button [routerLink]="['/resources']">
+              Resources
+            </ion-button>
+            <ion-button [routerLink]="['/selection']">
+              Fairs
+            </ion-button>
+            <ion-button  style="padding-right: 40px;" href="https://findyourfuturesem.org">
+              FYF
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
   <ion-router-outlet></ion-router-outlet>
 
 
 <ion-tabs>
-  <ion-tab-bar slot="bottom">
+  <!-- Mobile -->
+  <ion-tab-bar  id="ion-tabs" class="mobile-bar" slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon name="Home"></ion-icon>
       <ion-label>Home</ion-label>

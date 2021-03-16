@@ -1,15 +1,16 @@
 ion-grid {
     padding: 0;
 }
+
 .background-photo-landing-header{
-    height: 90vh;
-    background: url('../../../assets/photos/landing-page-photo.jpg');
+    height: 80vh;
+    background-image:
+    linear-gradient(270deg, rgba(0,85,165,0.5396533613445378) 0%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/photos/landing-page-photo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-
 ion-header {
     --background: none;
      h1 {
@@ -19,24 +20,6 @@ ion-header {
         display: inline;
      }
 }
-
-.progress-container {
-    width: 100%;
-    height: 8px;
-    background: #ccc;
-    overflow: hidden;
-    position: fixed;
-    z-index: 9999;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
-  }
-  
-  .progress-bar {
-    background: #faa71b;
-    width: 0%;
-    transition-timing-function: ease-out;
-    transition: width .15s;
-    height: 100vh;
-  }
 
 ion-toolbar {
 
@@ -70,9 +53,17 @@ ion-toolbar {
 ion-header > ion-toolbar {
     margin: 0 auto;
 }
+p{
+    font-size: 2em;
+}
 
-.header {
-    border-bottom: 5px solid #fab716;
+.header-image {
+    height: 35vh;
+    background-image:
+    linear-gradient(270deg, rgba(0,85,165,0.5396533613445378) 0%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/photos/landing-page-photo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .desktop-slides {
@@ -80,8 +71,20 @@ ion-header > ion-toolbar {
     margin: -3px 0;
     background: rgba(255,255,255,1);
     border-radius: 10px;
-    top: 112px;
+    top: 350px;
+    opacity: 0;
     box-shadow: 2px 3px 42px #888;
+    animation: slides-slide 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s forwards;
+}
+@keyframes slides-slide {
+    0%{
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px)
+    }
 }
 .mobile-slides {
 
@@ -102,7 +105,7 @@ ion-header > ion-toolbar {
 
     .slide-text-wrapper {
         padding: 0px 0px;
-        margin: 0 auto 0px auto;
+        padding: 0 56px 0px 56px;
         height: 450px;
         padding-top: 40px;
         width: auto;
@@ -110,7 +113,7 @@ ion-header > ion-toolbar {
 
         h2 {
             margin-top: 2.5rem;
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #fab716;
         }
@@ -135,7 +138,7 @@ ion-header > ion-toolbar {
 // Desktop
 .desktop-slide {
     display: inline-block;
-    height: 400px;
+    height: 320px;
     text-align: left;
     background: none;
     padding: 1em 2em;
@@ -145,19 +148,18 @@ ion-header > ion-toolbar {
     .slide-text-wrapper {
         padding: 0px 0px;
         margin: 0 auto 0px auto;
-        height: 450px;
+        height: 250px;
         padding-top: 40px;
         width: auto;
         background: none;
         img {
-            height: 80px;
+            height: 60px;
         }
 
         h2 {
-            margin-top: 2.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0055a5;
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            color: #222;
         }
 
         h4 {
@@ -168,28 +170,29 @@ ion-header > ion-toolbar {
             margin: 16px auto;
         }
 
-        .orange-button {
+        .blue-button {
             --background: #0055a5;
             height: 45px;
-            width: 150px;
-            font-weight: 600;
-            font-size: 1.02em;
+            width: 100%;
+            font-size: .8em;
             border-radius: 100px;
             margin-top: 20px;
         }
     }
 }
-
-
-h1{
-    margin-top: 100px;
-    font-size: 2.4em;
-    font-weight: 600;
-    color: #0055a5;
+.fairs{
+    h1{
+        font-size: 2.4em;
+        color: #0055a5;
+    }
 }
-
-
-.illustration {
+.fyf-illustration {
+    // background: lightgray;
+    height: 50vh;
+    width: 100%;
+    margin: -10px auto;
+}
+.resource-illustration {
     // background: lightgray;
     height: 50vh;
     width: 100%;
@@ -205,9 +208,10 @@ h1{
     padding: 0px 0px 0px 5px;
     margin: 22px auto;
     border-radius: 5px;
+    transition: 500ms;
     // box-shadow: 5px 8px 9px -4px rgba(0, 0, 0, 0.167);
-    width: 94%;
-    border-bottom-right-radius: 50px;
+    width: 100%;
+    // border-bottom-right-radius: 50px;
 
     h3 {
         font-weight: 700;
@@ -257,7 +261,8 @@ h1{
     }
 }
 .partner {
-    background: linear-gradient(101.17791478250604deg, rgba(247, 255, 253,1) 18.814338235294116%,rgba(255, 255, 255,1) 80.21139705882352%);    border: 2.5px solid #44D7B688;
+    background: linear-gradient(101.17791478250604deg, rgba(247, 255, 253,1) 18.814338235294116%,rgba(255, 255, 255,1) 80.21139705882352%);
+    border: 2.5px solid #44D7B688;
     color: #777;
 
     h3{
@@ -289,14 +294,26 @@ h1{
     height: 357px;
 }
 
-.fair-information {
-    margin-bottom: 70px;
+#fair-information {
     color: #777;
+    background: white;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.06);
+    width: auto;
+    padding: 8px 24px 24px 24px;
+    margin: 24px auto;
+
+    p {
+        font-size: 1.3em;
+    }
 
     span {
         color: #005191;
         width: 70px;
         display: inline-block;
+    }
+    .fair-information-button{
+        margin: 54px 0 0 0;
+        --background: #0055a5
     }
 }
 
@@ -324,7 +341,7 @@ h2 {
 }
 
 .landing-page-button {
-    margin: 100px auto;
+    margin: 10px auto;
     width: 200px;
     font-size: 1.23rem;
     --background: #0055a5;
@@ -336,42 +353,48 @@ h2 {
 }
 
 
-.resources {
+.resource {
+    background: white;
+    width: 300px;
+    height: 400px;
+    padding-bottom: 20px;
+    display: inline-block;
+    box-shadow: 5px 8px 9px -4px rgba(0, 0, 0, 0.167);
     h4 {
-        color: #777;
-    }
-}
-
-.feature {
-    background: #f6f6f6;
-    padding: 10px 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    // box-shadow: 5px 8px 9px -4px rgba(0, 0, 0, 0.167);
-
-    p{
-        font-size: 1.2em;
-        color: #444;
-    }
-
-    h3 {
-        color: #005191
+        color: #222;
     }
 }
 
 .resource-logo {
-    height: auto;
-    width: 170px;
+    height: 50px;
+    width: auto;
     margin: 90px 0px 60px 0px;
 }
 
+.feature {
+    background: #f4f5f8;
+    margin-bottom: 24px;
+    border-radius: 5px;
+    box-shadow: 5px 8px 9px -4px rgba(0, 0, 0, 0.167);
+    padding: 1em 1.25em;
+
+    p{
+        font-size: 1em;
+        color: #444;
+    }
+
+    h1 {
+        color: #005191
+    }
+}
+
+
 .landing-page-link {
-    font-size: 1.03rem;
-    border: 1.5px solid #005191;
-    --color: #005191;
+    font-size: 0.9em;
+    --color: white;
     border-radius: 5px;
     width: 90px;
-    --background: white;
+    --background: #0055a5;
     margin-top: 20px;
 }
 
@@ -400,7 +423,6 @@ h2 {
         width: 300px;
         display: block;
         margin: 70px auto;
-        border-bottom: 1px solid #7777;
         font-size: 1.3em;
         padding-bottom: 20px;
     }
@@ -433,6 +455,7 @@ ion-col {
 
 ion-footer {
     // border-top: 5px solid #faa71b;
+    --background: white;
 }
 
 ion-footer > ion-toolbar {
@@ -449,7 +472,7 @@ ion-footer > ion-toolbar:first-child > ion-button {
     margin-right: 8px;
 }
 ion-footer > ion-toolbar:nth-child(2) {
-    --background: #555;
+    --background: white;
 }
 ion-footer ion-button {
     text-transform: capitalize;
@@ -547,7 +570,6 @@ ion-footer ion-button {
     display: none;
     animation: usertype-shape-slide 0.5s ease forwards;
 }
-
 @keyframes usertype-shape-slide {
     from {
         transform: translateX(-30px);
@@ -561,11 +583,24 @@ ion-footer ion-button {
 #Phone-Shadow {
     display: none;
     opacity: 0;
-    animation: phone-shadow-fade-in 1s ease 0.5s forwards;
+    animation: phone-shadow-fade-in 1s ease 0.5s forwards,
+    phone-shadow-scale 4s ease 1.2s infinite forwards;
+}
+@keyframes phone-shadow-scale  {
+    0%{
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.1;
+    }
 }
 #Phone {
     display: none;
-    animation: phone-slide-up 1s ease forwards;
+    animation: phone-slide-up 1s ease forwards,
+    phone-float-up-and-down 4s ease 1.2s infinite forwards;
 }
 
 @keyframes phone-shadow-fade-in {
@@ -578,11 +613,25 @@ ion-footer ion-button {
 }
 @keyframes phone-slide-up  {
     from{
-        opacity: 0;
+        opacity: 1;
         transform-origin: 20% 40%;
         transform: translate(0px, 0px)
     }
     to {
+        opacity: 1;
+        transform: translate(420px, 0px)
+    }
+}
+@keyframes phone-float-up-and-down {
+    0%{
+        opacity: 1;
+        transform: translate(420px, 0px)
+    }
+    50% {
+        opacity: 1;
+        transform: translate(420px, 50px)
+    }
+    100% {
         opacity: 1;
         transform: translate(420px, 0px)
     }

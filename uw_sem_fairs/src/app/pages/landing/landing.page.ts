@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,6 @@ export class LandingPage implements OnInit {
   path;
   pathLength;
 
-
   slideOptions = {
     autoplay: {
       delay: 4000
@@ -22,8 +21,7 @@ export class LandingPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-
-
+    
   }
 
   loginSignup() {
@@ -93,8 +91,7 @@ export class LandingPage implements OnInit {
     volunteerShape.style.display = 'none';
     partnerShape.style.display = 'none';
 
-    console.log(resourcesBackgroundNight.attributes);
-    
+    // console.log(resourcesBackgroundNight.attributes);
     resourcesBackgroundNight.attributes[2].nodeValue = 'url(#linearGradient-21)';
 
 
@@ -103,7 +100,6 @@ export class LandingPage implements OnInit {
 
     sun.style.display = 'none';
     moon.style.display = 'block';
-
 
     if (scrolled > 6.3) {
       // lady.style.display = 'block';
@@ -115,35 +111,64 @@ export class LandingPage implements OnInit {
       // messageTwo.style.display = 'block';
     }
 
-    if (scrolled > 11.9) {
-      console.log('@ Fairs Usertype Shapes. \n');
+    if (scrolled > 5.59) {
       studentShape.style.display = 'inline-block';
     }
-    if (scrolled > 13.9) {
-      console.log('@ Fairs Usertype Shapes. \n');
+    if (scrolled > 5.59) {
       chaporoneShape.style.display = 'inline-block';
     }
-    if (scrolled > 15.9) {
-      console.log('@ Fairs Usertype Shapes. \n');
+    if (scrolled > 5.59) {
       partnerShape.style.display = 'inline-block';
     }
-    if (scrolled > 17.9) {
-      console.log('@ Fairs Usertype Shapes. \n');
+    if (scrolled > 5.59) {
       volunteerShape.style.display = 'inline-block';
     }
 
-    if (scrolled > 22) {
+    if (scrolled < 18.5) {
+      // Change Background back to Day time
+      // Reveal the Moon
+      // Reveal Sun
+      sun.style.display = 'none';
+
+      // Hide Moon
+      moon.style.display = 'block';
+
+      // Change Background of SVG Wrapper
+      document.getElementById('resource-illustration-wrapper').style.backgroundColor = '#333';
+      resourcesBackgroundNight.attributes[2].nodeValue = 'url(#linearGradient-21)';
+      
+    }
+
+    if (scrolled > 18.5) {
+
+      console.log('@ Resources Illustration. \n');
+      // Reveal Sun
+      sun.style.display = 'block';
+
+      // Hide Moon
+      moon.style.display = 'none';
+
+      // Change Background of SVG Wrapper, which is just the
+      document.getElementById('resource-illustration-wrapper').style.backgroundColor = '#6eabf2';
+
+      // Change Background of SVG
+      resourcesBackgroundNight.attributes[2].nodeValue = 'url(#linearGradient-20)';
+    }
+
+    if (scrolled > 19.6) {
       console.log('@ FYF App Illustration. \n');
       phoneBody.style.display = 'block';
       phoneShadow.style.display = 'block';
     }
 
-    if (scrolled > 45) {
-      console.log('@ Resources Illustration. \n');
-      sun.style.display = 'block';
-      moon.style.display = 'none';
-      resourcesBackgroundNight.attributes[2].nodeValue = 'url(#linearGradient-20)';
-      
+    
+
+    if(scrolled > 44.31) {
+      console.log('Start Sun Rotation!');
+      document.getElementById('Triangle-Copy-6').style.backgroundColor
+    }
+    if(scrolled > 47.13) {
+
     }
     if (scrolled > 72) {
       console.log('@ United-Way Logo. \n');
@@ -152,7 +177,6 @@ export class LandingPage implements OnInit {
     // console.log('ScrollTop: ', winScroll);
     // console.log('Height: ', height);
     console.log('Scroll %', scrolled);
-    document.getElementById('scrollBar').style.width = scrolled + '%';
   }
 
 

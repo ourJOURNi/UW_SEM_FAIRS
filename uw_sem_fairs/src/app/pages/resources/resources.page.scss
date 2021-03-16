@@ -1,25 +1,30 @@
+
+#desktop-toolbar{
+  --background: white;
+  --color: #0055a5;
+}
 h1 {
   margin: 30px 0;
 }
 
 .page-info {
   color: #666;
-  background: #eee;
-  height: 100px;
+  height: auto;
   position: relative;
   top: -15px;
-  padding: 58px 24px 40px 24px;
   font-size: 1.15em;
+  padding-bottom: 3em;
 }
 
 img {
-  height: 200px; width: 200px;
+  height: 100px; width: 100px;
   border-radius: 50px;
+  display: inline-block;
 }
 
 .name {
-  font-size: 2.2em;
-  color: #0055a5;
+  font-size: 1.4em;
+  color: #222;
   font-weight: 500;
 }
 
@@ -30,7 +35,7 @@ img {
 }
 
 .resource{
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .link {

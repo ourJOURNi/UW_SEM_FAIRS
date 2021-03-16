@@ -14,7 +14,7 @@ export class ResourcesPage implements OnInit {
       url: 'https://detroitydrc.z2systems.com/np/clients/detroitydrc/publicaccess/membershipDirectory.do?md=1',
       logo: '../../assets/logos/YDRC-logo.png',
       name: 'Detroit DRC',
-      description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim just!'
+      description: 'The Youth Development Resource Center supports a network of hundreds of Detroit youth development providers offering afterschool or summer programs. They seek to strengthen their individual and collective impact on youth, giving them the tools they need to increase program quality and improve youth outcomes.'
     },
     {
       url: 'https://discoveryourspark.org/program-finder/#',

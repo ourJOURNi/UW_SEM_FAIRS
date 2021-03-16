@@ -71,6 +71,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
   @ViewChild('boothPartners', {static: false})  boothPartnersGrid: ElementRef;
   @ViewChild('faq', {static: false})  faqGrid: ElementRef;
   @ViewChild('survey', {static: false})  surveyGrid: ElementRef;
+  title: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -79,95 +80,77 @@ export class FairPagePage implements OnInit, AfterViewInit {
      }
 
   ngOnInit() {
+  }
 
-    const id  = this.activatedRoute.snapshot.paramMap.get('id');
+  ngAfterViewInit() {
+    this.getFairDetails();
+
+  }
+  getFairDetails() {
+    let id  = this.activatedRoute.snapshot.paramMap.get('id');
     this.id = id;
-
-    const fair  = this.activatedRoute.snapshot.paramMap.get('fair');
-    this.fairName = fair;
-
-    const usertype  = this.activatedRoute.snapshot.paramMap.get('usertype');
+    let usertype  = this.activatedRoute.snapshot.paramMap.get('usertype');
     this.usertype = usertype;
-
-    const summary  = this.activatedRoute.snapshot.paramMap.get('summary');
-    this.summary = summary;
-
-    const date = this.activatedRoute.snapshot.paramMap.get('date');
-    this.date = format(new Date(date), 'hh:mm a, MMMM dd, yyyy');
-
-    const address = this.activatedRoute.snapshot.paramMap.get('address');
-    this.address = address;
-
-    const city = this.activatedRoute.snapshot.paramMap.get('city');
-    this.city = city;
-
-    const state = this.activatedRoute.snapshot.paramMap.get('state');
-    this.state = state;
-
-    const zip = this.activatedRoute.snapshot.paramMap.get('zip');
-    this.zip = zip;
-
-    const description = this.activatedRoute.snapshot.paramMap.get('description');
-    this.description = description;
-
-    const agenda = JSON.parse(this.activatedRoute.snapshot.paramMap.get('agenda'));
-    this.agenda = agenda;
-
-    const faqInfo = JSON.parse(this.activatedRoute.snapshot.paramMap.get('faq'));
-    this.faqInfo = faqInfo;
-
-    const partners = JSON.parse(this.activatedRoute.snapshot.paramMap.get('partners'));
-    // In order for a partner to be shown on the UI, their 'verified' property must be set to 'true'
-    this.partners = partners;
-    console.log(partners);
-    console.log(`This is the ${usertype} agenda.`);
-
 
     const parking = document.getElementById('parking');
     const faq = document.getElementById('faq');
     const booth = document.getElementById('boothPartners');
 
-
-    switch (usertype) {
-      case 'student':
-        this.boothPartners = true;
-        // set survey to false until surveys have to be pushed out posts surcey
-        this.survey = true;
-        parking.style.height = '0px';
-        faq.style.height = '0px';
-        break;
-      case 'chaperone':
-        console.log('usertype: chaperone');
-        this.boothPartners = true;
-        // set survey to false until surveys have to be pushed out posts surcey
-        this.survey = true;
-        parking.style.height = '0px';
-        faq.style.height = '0px';
-        break;
-      case 'volunteer':
-        console.log('usertype: volunteer');
-        this.parking = true;
-        this.faq = true;
-        // set survey to false until surveys have to be pushed out posts surcey
-        this.survey = true;
-        booth.style.height = '0px';
-        break;
-      case 'partner':
-        console.log('usertype: partner');
-        this.parking = true;
-        this.faq = true;
-        // set survey to false until surveys have to be pushed out posts surcey
-        this.survey = true;
-        booth.style.height = '0px';
-        break;
-      default:
-        console.log('There was a problem getting the usertype');
-        break;
-    }
-  }
-
-  ngAfterViewInit() {
-
+    this.fairs.getFair(this.id).subscribe(
+      data => {
+        console.log(data);
+        this.usertype = usertype;
+        this.title = data['title'];
+        this.date = format(new Date(data['date']), 'hh:mm a, MMMM dd, yyyy');
+        this.address = data['address'];
+        this.city = data['city'];
+        this.state = data['state'];
+        this.zip = data['zip'];
+        this.summary = data['summary'];
+        this.agenda = data['agenda'];
+        this.faqInfo = data['faq'];
+        this.partners = data['partners'];
+        this.description = data['description'];
+        
+        switch (usertype) {
+          case 'student':
+            this.boothPartners = true;
+            // set survey to false until surveys have to be pushed out posts surcey
+            this.survey = true;
+            this.agenda = data['studentAgenda'];
+            parking.style.height = '0px';
+            faq.style.height = '0px';
+            break;
+          case 'chaperone':
+            console.log('usertype: chaperone');
+            this.boothPartners = true;
+            // set survey to false until surveys have to be pushed out posts surcey
+            this.survey = true;
+            parking.style.height = '0px';
+            faq.style.height = '0px';
+            break;
+          case 'volunteer':
+            console.log('usertype: volunteer');
+            this.parking = true;
+            this.faq = true;
+            // set survey to false until surveys have to be pushed out posts surcey
+            this.survey = true;
+            booth.style.height = '0px';
+            break;
+          case 'partner':
+            console.log('usertype: partner');
+            this.parking = true;
+            this.faq = true;
+            // set survey to false until surveys have to be pushed out posts surcey
+            this.survey = true;
+            booth.style.height = '0px';
+            break;
+          default:
+            console.log('There was a problem getting the usertype');
+            break;
+        }
+      }
+    )
   }
 
   submitSurvey() {
@@ -215,8 +198,8 @@ export class FairPagePage implements OnInit, AfterViewInit {
 
     // Booth Partners Popin
     if (e['detail'].currentY > boothPartnersGridFromTop - ((window.innerHeight / 1.2 )) && this.boothPartners ) {
-      console.log('From Top: ' + boothPartnersGridFromTop);
-      console.log('Booth Partners Popping In');
+      // console.log('From Top: ' + boothPartnersGridFromTop);
+      // console.log('Booth Partners Popping In');
       this.boothPartnersPopIn = true;
     } else {
       this.boothPartnersPopIn = false;
@@ -224,7 +207,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
 
     // Parking Popin
     if (e['detail'].currentY > parkingGridFromTop - ((window.innerHeight / 1.2 )) && this.parking ) {
-      console.log('Parking Popping In');
+      // console.log('Parking Popping In');
       this.parkingPopIn = true;
     } else {
       this.parkingPopIn = false;
@@ -232,14 +215,14 @@ export class FairPagePage implements OnInit, AfterViewInit {
 
     // FAQ Popin
     if (e['detail'].currentY > faqGridFromTop - ((window.innerHeight / 1.2 )) && this.faq ) {
-      console.log('FAQ Popping In');
+      // console.log('FAQ Popping In');
       this.faqPopIn = true;
     } else {
       this.faqPopIn = false;
     }
 
     if (e['detail'].currentY > surveyGridFromTop - ((window.innerHeight / 1.2)) && this.survey ) {
-      console.log('Survey Popping In');
+      // console.log('Survey Popping In');
       this.surveyPopIn = true;
     } else {
       this.surveyPopIn = false;

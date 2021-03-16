@@ -102,7 +102,7 @@ h5{
   text-transform: capitalize;
   color: #faa71b;
   border-radius: 5px;
-  margin-top: 32px;
+  margin-top: 64px;
   font-weight: 800;
   font-size: 2.3em;
 }
@@ -130,7 +130,6 @@ h5{
   font-size: 1.1em;
   line-height: 1.3em;
   color: #111;
-  border-bottom: 1px solid #999;
   padding-bottom: 40px;
 }
 
@@ -145,7 +144,6 @@ h5{
   height: auto;
   transition: 0.5s;
   animation: popin 500ms ease forwards;
-  border-bottom: 1px solid rgb(221, 221, 221);
 }
 
 .parking {
@@ -252,12 +250,12 @@ h5{
   left: -15px;
   --background: white;
   ion-badge {
-    font-size: 1em;
+    font-size: 1.1em;
     width: 4em;
     padding: 12px;
-    background: white;
-    color: #0055a5;
-    border: 2px solid #0055a5;
+    background: #faab71;
+    color: white;
+    border: 2px solid #faab71;
   }
   h2{
     font-size: 1.3em;

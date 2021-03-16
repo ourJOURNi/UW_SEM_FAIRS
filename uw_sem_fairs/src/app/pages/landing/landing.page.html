@@ -1,45 +1,42 @@
-
-
 <ion-content (ionScroll)="scrollTracking($event)" [scrollEvents]="true">
   <!-- <div class="progress-container">
     <div class="progress-bar" id="scrollBar"></div>
   </div> -->
   <ion-grid>
-
     <!-- Desktop Slides -->
-   <ion-row class="ion-hide-md-down background-photo-landing-header">
+    <ion-row class="ion-hide-md-down background-photo-landing-header">
       <ion-col size="5" push="0.5">
         <ion-slides class="desktop-slides" [options]="slideOptions" pager="true">
           <ion-slide class="desktop-slide">
             <div class="slide-text-wrapper">
-              <img src="../../../assets/uwse_logo.png" alt="" srcset="">
+              <img src="../../../assets/icons/my-events-icon.svg" alt="" srcset="">
               <h2>Register for United Way Southeast Michigan Fairs.</h2>
-              <ion-button (click)="fairsPage()" class="orange-button">View Fairs</ion-button>
+              <ion-button (click)="fairsPage()" class="blue-button">View Fairs</ion-button>
             </div>
           </ion-slide>
           <ion-slide class="desktop-slide">
             <div class="slide-text-wrapper">
               <img src="../../../assets/logo-2.png" alt="" srcset="">
-              <h2>Connect with other Students in the Community with the Find Your Future App</h2>
-              <ion-button (click)="loginSignup()" class="orange-button">Join FYF</ion-button>
+              <h2>Connect with other Students in the Community.</h2>
+              <ion-button (click)="loginSignup()" class="blue-button">Join FYF</ion-button>
             </div>
           </ion-slide>
           <ion-slide class="desktop-slide">
             <div class="slide-text-wrapper">
-              <img fill="#0055a5" src="../../../assets/icons/blue-book.svg" alt="" srcset="">
+              <img src="../../../assets/icons/blue-book.svg" alt="Fairs Icon">
               <h2>Find resources from other organizations.</h2>
-              <ion-button (click)="resources()" class="orange-button">Resources</ion-button>
+              <ion-button (click)="resources()" class="blue-button">Resources</ion-button>
             </div>
           </ion-slide>
         </ion-slides>
       </ion-col>
     </ion-row>
-
     <!-- Mobile Slides -->
     <ion-row class="header ion-hide-md-up">
-      <div class="header-image">
-        <img src="../../../assets/Fair_Agenda.jpg" alt="">
-      </div>
+
+      <ion-col class="header-image" size="12">
+        <img style="margin-top: 20px;" height="50" src="../../../assets/uwse_logo.png" alt="" srcset="">
+      </ion-col>
       <ion-slides class="mobile-slides" [options]="slideOptions" pager="true">
         <ion-slide class="ion-align-items-center mobile-slide" >
           <div class="slide-text-wrapper">
@@ -61,139 +58,49 @@
         </ion-slide>
       </ion-slides>
     </ion-row>
-
-  
-
-    <ion-row class="ion-justify-content-center" >
-
-      <ion-col  class="" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="6">
-
-
-        <h1>Register for Fair.</h1>
-        <!-- Fairs -->
-
-        <p class="fairs-description">Give the user a little more information about what Fairs are. This is just some filler here just to get the point across. I want there to be THIS much text.</p>
-
-        <div class="fair-information">
-          <h4><span>Title: </span> Innovation Tech Fair</h4>
-          <h4><span>When: </span> 10am, March 1st, 2021</h4>
-          <h4><span>Where: </span> Little Caesers Arena</h4>
+    <!-- Fairs -->
+    <ion-row style="padding: 150px 0; background: #f4f5f8;" class="ion-justify-content-center">
+      <!-- Fairs -->
+      <ion-col class="fairs" size-xs="8" size-sm="8" size-md="8" size-lg="3" size-xl="3">
+        <div id="fair-information">
+          <h1>Upcoming Fair</h1>
+          <p>Innovation Tech Fair</p>
+          <p>10am, March 1st, 2021</p>
+          <p>Little Caesers Arena</p>
+          <ion-button
+          (click)="fairsPage()" expand="full" class="fair-information-button">Sign up</ion-button>
         </div>
-
-
-        <!-- <strong>Latest Fair</strong>
-        <img class="lastest-fair" src="../../../assets/Journi_flyer-500x357.png" alt="">
-        <p class="lastest-fair-description">Information about latest fair. Lorem ias ashs jsh uii pooi juhy tui bh nui sas hha shh just rew tol poold sa sd woo as we will work.</p> -->
-
+      </ion-col>
+      <ion-col size-xs="8" size-sm="4" size-md="4" size-lg="4" size-xl="5">
         <div class="usertype student">
           <img id="student-shape" class="usertype-shape" src="../../../assets/icons/Student-Shapes.svg" alt="" srcset="">
           <h3>Student</h3>
-          <p>This is the description of the usertype.</p>
         </div>
         <div class="usertype chaperone">
           <img id="chaporone-shape" class="usertype-shape" src="../../../assets/icons/Chaporone-Shapes.svg" alt="" srcset="">
           <h3>Chaperone</h3>
-          <p>This is the description of the usertype.</p>
         </div>
         <div class="usertype partner">
           <img id="partner-shape" class="usertype-shape" src="../../../assets/icons/Partner-Shapes.svg" alt="" srcset="">
           <h3>Booth Partner</h3>
-          <p>This is the description of the usertype.</p>
         </div>
         <div class="usertype volunteer">
           <img id="volunteer-shape" class="usertype-shape" src="../../../assets/icons/Volunteer-Shapes.svg" alt="" srcset="">
           <h3>Volunteer</h3>
-          <p>This is the description of the usertype.</p>
-        </div>
-        <div class="ion-text-center">
-          <ion-button
-          (click)="fairsPage()"class="landing-page-button">Sign up</ion-button>
         </div>
       </ion-col>
-
-      <!-- FYF App -->
-      <ion-col class="ion-text-center" size="12">
-        <!-- <img style="margin-top: 50px;" src="../../../assets/icons/FYF-App-Illustration.svg" class="illustration"> -->
-        <svg class="illustration" width="1138px" height="759px" viewBox="0 0 1138 759" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
-          <title>FYF-App-Illustration</title>
-          <desc>Created with Sketch.</desc>
-          <defs>
-              <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="134.789671%" gradientTransform="translate(0.500000,0.000000),scale(0.126761,1.000000),rotate(90.000000),scale(1.000000,8.083752),translate(-0.500000,-0.000000)" id="radialGradient-1">
-                  <stop stop-color="#000000" stop-opacity="0.424852491" offset="0%"></stop>
-                  <stop stop-color="#FFFFFF" stop-opacity="0.464024257" offset="100%"></stop>
-              </radialGradient>
-          </defs>
-          <g id="FYF-App-Illustration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Phone" transform="translate(420.000000, 63.000000)">
-                  <rect id="Phone-Body" stroke="#979797" stroke-width="3" fill="#1F1F1F" x="1.5" y="1.5" width="294" height="526" rx="18"></rect>
-                  <rect id="Rectangle" fill="#FFFFFF" x="12" y="24" width="274" height="435" rx="4"></rect>
-                  <circle id="Oval" fill="#005191" cx="103.5" cy="200.5" r="34.5"></circle>
-                  <ellipse id="Oval-Copy" fill="#21CE99" cx="194.5" cy="286" rx="34.5" ry="35"></ellipse>
-                  <circle id="Oval-Copy-2" fill="#005191" cx="105.5" cy="371.5" r="34.5"></circle>
-                  <rect id="Rectangle" fill="#777777" x="77" y="254" width="63" height="64"></rect>
-                  <rect id="Rectangle-Copy-4" fill="#005191" x="165" y="339" width="64" height="64"></rect>
-                  <rect id="Rectangle-Copy-3" fill="#FFB351" x="163" y="169" width="63" height="64"></rect>
-                  <g id="Menu-Button" transform="translate(0.000000, 460.000000)">
-                      <rect id="Rectangle" x="0" y="-2.84217094e-14" width="99" height="59"></rect>
-                      <g id="Group" transform="translate(43.000000, 21.000000)" stroke="#979797" stroke-linecap="square" stroke-width="3">
-                          <path d="M0.5,0 L0.5,18.6041667" id="Line"></path>
-                          <path d="M6.5,0 L6.5,18.6041667" id="Line-Copy"></path>
-                          <path d="M12.5,0 L12.5,18.6041667" id="Line-Copy-2"></path>
-                      </g>
-                  </g>
-                  <g id="Middle-Button" transform="translate(99.000000, 460.000000)">
-                      <rect id="Rectangle-Copy" x="0" y="-2.84217094e-14" width="99" height="59"></rect>
-                      <rect id="Rectangle" stroke="#979797" stroke-width="2" x="40" y="17" width="20" height="26" rx="9"></rect>
-                  </g>
-                  <g id="Back-Button" transform="translate(198.000000, 460.000000)">
-                      <rect id="Rectangle-Copy-2" x="0" y="-2.84217094e-14" width="99" height="59"></rect>
-                      <g id="Group-4" transform="translate(44.000000, 23.000000)" stroke="#979797" stroke-linecap="square" stroke-width="3">
-                          <path d="M0.227272727,5.75 L9.77272727,0" id="Line-2"></path>
-                          <path d="M0.227272727,13.75 L9.58333333,6.75" id="Line-2-Copy" transform="translate(5.000000, 10.000000) scale(-1, 1) translate(-5.000000, -10.000000) "></path>
-                      </g>
-                  </g>
-                  <image id="fyf-logo-2" x="51" y="53" width="217" height="67" xlink:href="data:image/png;base64,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"></image>
-              </g>
-              <ellipse id="Phone-Shadow" fill="url(#radialGradient-1)" cx="569" cy="678" rx="142" ry="18"></ellipse>
-          </g>
-      </svg>
-      </ion-col>
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="6">
-        <h1>Find Your Future</h1>
-        <p class="app-description">Give the user a little more information about The FYF App. This is just some filler here just to get the point across. I want there to be THIS much text.</p>
-
-        <div class="feature">
-          <h3>Jobs</h3>
-          <p>This is the description of the feature.</p>
-        </div>
-        <div class="feature">
-          <h3>Events</h3>
-          <p>This is the description of the feature.</p>
-        </div>
-        <div class="feature">
-          <h3>Posts</h3>
-          <p>This is the description of the feature.</p>
-        </div>
-        <div class="feature">
-          <h3>Mentors</h3>
-          <p>This is the description of the feature.</p>
-        </div>
-        <div class="ion-text-center">
-          <ion-button href="http://10.0.1.5:4200" class="landing-page-button">Sign up</ion-button>
-        </div>
-      </ion-col>
-
-      <!-- Resources -->
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="6">
-        <h1>Resources</h1>
+    </ion-row>
+    <!-- Detroit Illustation -->
+    <ion-row id="resource-illustration-wrapper" style="margin: 0px 0 0px 0; background: #f4f5f8;">
+      <ion-col size-xs="11" size-sm="12" size-md="12" size-lg="12" size-xl="12">
         <div class="ion-text-center">
           <!-- class="illustration" -->
-          <svg class="illustration" width="1138px" height="759px" viewBox="0 0 1138 759" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <svg class="resource-illustration" width="1138px" height="759px" viewBox="0 0 1138 759" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
             <title>Resources-Illustration-Copy</title>
             <desc>Created with Sketch.</desc>
             <defs>
+              <!--  -->
                 <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-20">
                     <stop stop-color="#6EACF2" offset="0%"></stop>
                     <stop stop-color="#CEF4FF" stop-opacity="0.328015734" offset="100%"></stop>
@@ -233,6 +140,14 @@
                 <path d="M759,508.547534 C764.820042,506.849178 768.904238,506 771.252587,506 C773.600936,506 777.51674,506 783,506 L783,648.763169 L759,649 L759,508.547534 Z" id="Shadow-2" fill="url(#linearGradient-25)"></path>
                 <path d="M685,428.008358 C687.182516,425.336119 688.714089,424 689.59472,424 C690.475351,424 691.943778,424 694,424 L694,648.627364 L685,649 L685,428.008358 Z" id="Circular-Column-1"></path>
                 <path d="M193.17767,237.117714 C209.881924,272.970497 267.722195,301.155722 366.698485,321.673389 L358,256.21304 C277.333333,283.09925 237,272.717298 237,225.067182 C237,177.417067 262.888246,119.137043 314.664737,50.2271099 C216.969105,138.968062 176.473416,201.26493 193.17767,237.117714 Z" id="Moon" fill="#F7B500"></path>
+
+                <!-- Sun Animations -->
+                <animate
+                attributeName="transform" attributeType="XML"
+                to="translate(40.000000, 272.000000)" dur="3s"
+                repeatCount="indefinite"
+                fill="freeze"
+              />
                 <g id="Sun" transform="translate(140.000000, 372.000000)">
                     <polygon id="Triangle-Copy-6" fill="#ECC1A3" points="140 0 161 42 119 42"></polygon>
                     <polygon id="Triangle-Copy-7" fill="#ECC1A3" transform="translate(219.000000, 53.000000) scale(1, -1) rotate(135.000000) translate(-219.000000, -53.000000) " points="219 32 240 74 198 74"></polygon>
@@ -257,65 +172,144 @@
         </svg>
         </div>
       </ion-col>
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="10" size-xl="6">
-        <p class="resources-description">
-          Tell the user a little more information about Resources.
-        </p>
-        <strong>Just a few resources:</strong>
-        <div class="ion-text-center">
+    </ion-row>
+    <!-- FYF -->
+    <ion-row style="padding: 150px 0;" class="ion-justify-content-center">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8">
+        <img height="72" style="margin-bottom: 24px;" src="../../../assets/logos/final_fyf_logo.svg">
+        <p style="font-size: 1.2em; margin-bottom: 42px; line-height: 1.;">Continue to connect with the United Way Southeastern Michigan family after the fair with the <b>Find Your Future (FYF)</b> App. You can download this app straight to your phone, from the website <a href="https://findyourfuturesem.org">findyourfuturesem.org</a> then tapping the <span style="color: #21ce99"><b>download</b></span> button at the bottom of the login page. No need to search for this app in an app store! For iOS, Android, Desktop, and Tablets.</p>
+      </ion-col>
+      <ion-col style="margin-top: 72px" size-xs="11" size-sm="10" size-md="10" size-lg="4">
+        <!-- <img style="margin-top: 50px;" src="../../../assets/icons/FYF-App-Illustration.svg" class="illustration"> -->
+        <svg class="fyf-illustration" width="1138px" height="759px" viewBox="0 0 1138 759" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+          <title>FYF-App-Illustration</title>
+          <desc>Created with Sketch.</desc>
+          <defs>
+              <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="134.789671%" gradientTransform="translate(0.500000,0.000000),scale(0.126761,1.000000),rotate(90.000000),scale(1.000000,8.083752),translate(-0.500000,-0.000000)" id="radialGradient-1">
+                  <stop stop-color="#000000" stop-opacity="0.424852491" offset="0%"></stop>
+                  <stop stop-color="#FFFFFF" stop-opacity="0.464024257" offset="100%"></stop>
+              </radialGradient>
+          </defs>
+          <g id="FYF-App-Illustration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Phone" transform="translate(420.000000, 63.000000)">
+                  <rect id="Phone-Body" stroke="#979797" stroke-width="3" fill="#1F1F1F" x="1.5" y="1.5" width="294" height="526" rx="18"></rect>
+                  <rect id="Rectangle" fill="#FFFFFF" x="12" y="24" width="274" height="435" rx="4"></rect>
+                  <circle id="Oval" fill="#005191" cx="103.5" cy="200.5" r="34.5"></circle>
+                  <ellipse id="Oval-Copy" fill="#21CE99" cx="194.5" cy="286" rx="34.5" ry="35"></ellipse>
+                  <circle id="Oval-Copy-2" fill="#005191" cx="105.5" cy="371.5" r="34.5"></circle>
+                  <rect id="Rectangle" fill="#e4405f" x="77" y="254" width="63" height="64"></rect>
+                  <rect id="Rectangle-Copy-4" fill="#FFB351" x="165" y="339" width="64" height="64"></rect>
+                  <rect id="Rectangle-Copy-3" fill="#FFB351" x="163" y="169" width="63" height="64"></rect>
+                  <g id="Menu-Button" transform="translate(0.000000, 460.000000)">
+                      <rect id="Rectangle" x="0" y="-2.84217094e-14" width="99" height="59"></rect>
+                      <g id="Group" transform="translate(43.000000, 21.000000)" stroke="#979797" stroke-linecap="square" stroke-width="3">
+                          <path d="M0.5,0 L0.5,18.6041667" id="Line"></path>
+                          <path d="M6.5,0 L6.5,18.6041667" id="Line-Copy"></path>
+                          <path d="M12.5,0 L12.5,18.6041667" id="Line-Copy-2"></path>
+                      </g>
+                  </g>
+                  <g id="Middle-Button" transform="translate(99.000000, 460.000000)">
+                      <rect id="Rectangle-Copy" x="0" y="-2.84217094e-14" width="99" height="59"></rect>
+                      <rect id="Rectangle" stroke="#979797" stroke-width="2" x="40" y="17" width="20" height="26" rx="9"></rect>
+                  </g>
+                  <g id="Back-Button" transform="translate(198.000000, 460.000000)">
+                      <rect id="Rectangle-Copy-2" x="0" y="-2.84217094e-14" width="99" height="59"></rect>
+                      <g id="Group-4" transform="translate(44.000000, 23.000000)" stroke="#979797" stroke-linecap="square" stroke-width="3">
+                          <path d="M0.227272727,5.75 L9.77272727,0" id="Line-2"></path>
+                          <path d="M0.227272727,13.75 L9.58333333,6.75" id="Line-2-Copy" transform="translate(5.000000, 10.000000) scale(-1, 1) translate(-5.000000, -10.000000) "></path>
+                      </g>
+                  </g>
+              </g>
+              <ellipse id="Phone-Shadow" fill="url(#radialGradient-1)" cx="569" cy="678" rx="142" ry="18"></ellipse>
+          </g>
+      </svg>
+      <div class="ion-text-center">
+        <ion-button href="http://10.0.1.5:4200" class="landing-page-button">Sign up</ion-button>
+      </div>
+      </ion-col>
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="4">
+        <div class="feature">
+          <h1>Jobs</h1>
+          <p>Search for Jobs in the Southeast Michigan area!</p>
+        </div>
+        <div class="feature">
+          <h1>Events</h1>
+          <p>Go to upcoming events with organizations associated with United Way SEM.</p>
+        </div>
+        <div class="feature">
+          <h1>Posts</h1>
+          <p>Have something on your mind that you want to discuss with other people in your community? Create posts that can be commented on!</p>
+        </div>
+        <div class="feature">
+          <h1>Mentors</h1>
+          <p>Have any questions? Send an email to a Mentor that has been verified by United Way SEM.</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- Resources -->
+    <ion-row style="padding: 150px 0 0 0; background: #f4f5f8;" class="ion-justify-content-center">
+      <ion-col size="8">
+        <h1 style="color: #0055a5; font-size: 3em;">Resources</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" style="padding: 0px 0; background: #f4f5f8;">
+      <ion-col class="ion-text-center" size-xs="8" size-sm="4" size-md="4" size-lg="3" size-xl="3">
           <div class="resource">
             <img class="resource-logo" src="../../../assets/dys.png" alt="">
             <h4>Discover Your Spark</h4>
             <ion-button class="landing-page-link">Website</ion-button>
-            <div class="small-divder"></div>
           </div>
+      </ion-col>
+      <ion-col class="ion-text-center" size-xs="8" size-sm="4" size-md="4" size-lg="3" size-xl="3">
           <div class="resource">
             <img class="resource-logo" src="../../../assets/ydrc.png" alt="">
             <h4>YDRC</h4>
             <ion-button class="landing-page-link">Website</ion-button>
-            <div class="small-divder"></div>
           </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" style="padding: 0px 0; background: #f4f5f8;">
+      <ion-col class="ion-text-center" size-xs="8" size-sm="4" size-md="4" size-lg="3" size-xl="3">
           <div class="resource">
             <img class="resource-logo" src="../../../assets/gdyt.png" alt="">
             <h4>GDYT</h4>
             <ion-button class="landing-page-link">Website</ion-button>
-            <div class="small-divder"></div>
           </div>
-        </div>
-        <div class="ion-text-center">
+      </ion-col>
+      <ion-col class="ion-text-center" size-xs="8" size-sm="4" size-md="4" size-lg="3" size-xl="3">
+          <div class="resource">
+            <img style="width: 220px; height: auto; margin-bottom: 78px;" class="resource-logo" src="../../../assets/dsg.png" alt="">
+            <h4>DSG</h4>
+            <ion-button class="landing-page-link">Website</ion-button>
+          </div>
+      </ion-col>
+      <!-- <ion-col class="ion-text-center" size="12">
           <ion-button
           (click)="resources()"class="landing-page-button">View More</ion-button>
-        </div>
-      </ion-col>
-      <!-- About United Way -->
-      <ion-col id="united-way-description" size-xs="11" size-sm="10" size-md="10" size-lg="10" size-xl="6">
-        <img class="uw-logo" src="../../../assets/logos/UWSEM-Color.png" />
-        <h1>Who is United Way?</h1>
-        <p>
-          United Way advances the common good in communities across the world. Our focus is on education, income and health — the building blocks for a good quality of life.
-          <br>
-          <br>
-          United Way works with companies, governments, nonprofits and other organizations to address complex challenges on a worldwide scale. Our partners contribute more than money. Their ideas, volunteer power, in-kind support and more are helping build stronger communities.
-        </p>
-        <p style="margin-bottom: 70px;" >
-          In 2005, United Way Community Services and United Way of Oakland County evolved and voted to create a new organization: United Way for Southeastern Michigan.
-        </p>
-        <div class="ion-text-center">
-          <a  href="https://unitedwaysem.org/about-us/" target="_blank">You can learn more about United Way Southeastern Michigan here</a>
-          <strong>United Way Partners</strong>
-        </div>
-        <img class="partner-logo" src="../../../assets/logos/Ford_logo_flat.png" alt="" srcset="">
-        <img class="partner-logo" src="../../../assets/logos/National_Football_League_logo.png" alt="" srcset="">
-        <img class="partner-logo" src="../../../assets/logos/United_Parcel_Service_logo_2014.png" alt="" srcset="">
-        <img class="partner-logo" src="../../../assets/logos/Lyft_logo.png" alt="" srcset="">
-        <img class="partner-logo" src="../../../assets/logos/Pepsi_logo_new.png" alt="" srcset="">
-        <img class="partner-logo" src="../../../assets/logos/Walmart_logo.png" alt="" srcset="">
-        <img class="partner-logo" src="../../../assets/logos/Starbucks_Corporation_Logo_2011.png" alt="" srcset="">
-      </ion-col>
+      </ion-col> -->
+    </ion-row>
+    <!-- About United Way -->
+    <ion-row class="ion-justify-content-center" style="padding: 150px 0 0 0; background: #f4f5f8;">
+     <ion-col id="united-way-description" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <img class="uw-logo" src="../../../assets/logos/UWSEM-Color.png" />
+      <h1>Who is United Way?</h1>
+      <p>
+        United Way advances the common good in communities across the world. Our focus is on education, income and health — the building blocks for a good quality of life.
+        <br>
+        <br>
+        United Way works with companies, governments, nonprofits and other organizations to address complex challenges on a worldwide scale. Our partners contribute more than money. Their ideas, volunteer power, in-kind support and more are helping build stronger communities.
+      </p>
+      <p style="margin-bottom: 70px;" >
+        In 2005, United Way Community Services and United Way of Oakland County evolved and voted to create a new organization: United Way for Southeastern Michigan.
+      </p>
+      <div class="ion-text-center">
+        <a  href="https://unitedwaysem.org/about-us/" target="_blank">You can learn more about United Way Southeastern Michigan here</a>
+      </div>
+    </ion-col>
     </ion-row>
   </ion-grid>
-
-  <ion-footer>
+  <ion-footer style="--background: white;">
     <!-- Social media mobile -->
     <div class="button-row ion-hide-sm-down">
       <ion-button fill="clear"><ion-icon class="logo-facebook" size="large"></ion-icon></ion-button>
@@ -323,11 +317,11 @@
       <ion-button fill="clear"><ion-icon class="logo-instagram" size="large"></ion-icon></ion-button>
     </div>
     <ion-toolbar class="ion-hide-md-up">
-      <ion-button fill="clear" color="light" size="small"><ion-icon name="logo-facebook" size="large"></ion-icon></ion-button>
-      <ion-button fill="clear" color="light" size="small"><ion-icon name="logo-twitter" size="large"></ion-icon></ion-button>
-      <ion-button fill="clear" color="light" size="small"><ion-icon name="logo-instagram" size="large"></ion-icon></ion-button>
-      <ion-button routerLink="/terms" size="small">Terms of Use</ion-button>
-      <ion-button routerLink="/privacy" size="small">Privacy Policy</ion-button>
+      <ion-button style="--color: #0055a5;" size="small"><ion-icon name="logo-facebook" size="large"></ion-icon></ion-button>
+      <ion-button style="--color: #0055a5;" size="small"><ion-icon name="logo-twitter" size="large"></ion-icon></ion-button>
+      <ion-button style="--color: #0055a5;" size="small"><ion-icon name="logo-instagram" size="large"></ion-icon></ion-button>
+      <!-- <ion-button routerLink="/terms" size="small">Terms of Use</ion-button>
+      <ion-button routerLink="/privacy" size="small">Privacy Policy</ion-button> -->
     </ion-toolbar>
   </ion-footer>
 </ion-content>

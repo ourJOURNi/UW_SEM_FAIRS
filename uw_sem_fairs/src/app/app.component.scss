@@ -1,13 +1,33 @@
-ion-tab-bar {
+ion-label {
+  font-size: 1em;
+}
+#desktop-toolbar{
+  --background: white;
+  color: #0055a5;
+  border: none;
+  position: relative;
+  top: -4px;
+  transition: 500ms;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.06);
+
+  ion-button {
+    height: 100px;
+  }
+}
+.mobile-bar{
   --background: #0055a5;
   --color: white;
 }
-
 ion-tab-button {
-  --color: #eee;
   --color-selected: #faa71b;
 }
-
 .sc-ion-label-md-h {
   font-weight: 600;
+  font-size: 1.3em;
+}
+
+@media only screen and (min-width: 767px) {
+  #ion-tabs {
+    display: none;
+  }
 }
