@@ -21,22 +21,25 @@
     <!-- Info & Agenda -->
   <div id="info">
     <ion-grid>
-      <ion-row>
+      <!-- <ion-row>
         <ion-col *ngIf="this.usertype === 'partner'" class="ion-hide-md-up background-photo-partner-small" size="12"></ion-col>
         <ion-col *ngIf="this.usertype === 'student'" class="ion-hide-md-up background-photo-student-small" size="12"></ion-col>
         <ion-col *ngIf="this.usertype === 'chaperone'" class="ion-hide-md-up background-photo-chaperone-small" size="12"></ion-col>
         <ion-col *ngIf="this.usertype === 'volunteer'" class="ion-hide-md-up background-photo-volunteer-small" size="12"></ion-col>
-      </ion-row>
-      <ion-row style="background: #f4f5f8;" class="ion-justify-content-center">
-        <ion-col class="fair-header" size-xs="10" size-sm="10" size-md="8" size-lg="8">
+      </ion-row> -->
+      <ion-row style="background: #f4f5f8; padding: 60px 0 24px 0;" class="ion-justify-content-center">
+        <ion-col class="fair-header" size-xs="10" size-sm="10" size-md="8" size-lg="5">
           <div>
-            <h2 class="usertype">{{usertype}} Sign Up</h2>
+            <h2 style="margin-bottom: 0;" class="usertype">{{usertype}} Sign Up</h2>
             <h1 class="fair-name">{{title}}</h1>
             <h5 class="fair-date">
               <ion-icon slot="start" src="../../assets/icons/time-icon.svg"></ion-icon>{{date}}</h5>
             <h5 class="fair-address">
               <ion-icon slot="start" src="../../assets/icons/location-icon.svg"></ion-icon>{{address}}, {{city}}, {{state}}, {{zip}}</h5>
             <p class="fair-summary">{{summary}}</p>
+            <ion-button class="ion-hide-md-down green-button" (click)="register(this.id)">
+              Register
+            </ion-button>
           </div>
         </ion-col>
       </ion-row>
@@ -45,8 +48,8 @@
 
   <!-- Agenda -->
   <div id="agenda">
-    <ion-row class="ion-justify-content-center">
-      <ion-col class="agenda" size-xs="10" size-sm="10" size-md="8" size-lg="8">
+    <ion-row style="padding: 100px 0;" class="ion-justify-content-center">
+      <ion-col class="agenda" size-xs="10" size-sm="10" size-md="8" size-lg="5">
 
         <h2>Agenda</h2>
         <ion-list style="--background: white;">
@@ -64,8 +67,8 @@
   <!-- Parking -->
   <div #parking id="parking" [className]="parkingPopIn ? 'parking' : 'off'">
     <ion-grid>
-      <ion-row style="background: #f4f5f8;" class="ion-justify-content-center">
-        <ion-col class="ion-text-center" size-xs="12" size-sm="11" size-md="8" size-lg="8">
+      <ion-row style="background: #f4f5f8; padding: 100px 0;" class="ion-justify-content-center">
+        <ion-col class="ion-text-center" size-xs="12" size-sm="11" size-md="8" size-lg="5">
           <h2>Parking</h2>
           <img style="width: 100%;" src="../../../../../assets/icons/parking-placeholder.svg" alt="" srcset="">
         </ion-col>
@@ -76,8 +79,8 @@
   <!-- FAQ -->
   <div #faq id="faq" [className]="faqPopIn ? 'faq' : 'off'">
     <ion-grid>
-      <ion-row class="ion-justify-content-center">
-        <ion-col  size-xs="10" size-sm="10" size-md="8" size-lg="8">
+      <ion-row style="padding: 100px 0;" class="ion-justify-content-center">
+        <ion-col  size-xs="10" size-sm="10" size-md="8" size-lg="5">
           <h2>Frequently Asked Questions (FAQs)</h2>
           <ion-list style="position: relative; top: -60px;
       ">
@@ -93,10 +96,10 @@
   </div>
 
   <!-- Booth Partners -->
-  <div #boothPartners style="background: #f4f5f8;" id="boothPartners" [className]="boothPartnersPopIn ? 'booth-partners' : 'off'">
+  <div #boothPartners style="background: #f4f5f8; padding: 100px 0;" id="boothPartners" [className]="boothPartnersPopIn ? 'booth-partners' : 'off'">
     <ion-grid>
       <ion-row class="ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
+        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="6">
           <h2>Booth Partners</h2>
           <div *ngFor="let partner of partners">
             <div *ngIf="partner.verified === true">
@@ -121,8 +124,8 @@
   <!-- Survey -->
   <div #survey id="survey" [className]="surveyPopIn ? 'survey' : 'off'">
     <ion-grid>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="8">
+      <ion-row style="padding: 100px 0;" class="ion-justify-content-center">
+        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="6">
           <h2>Survey</h2>
           <ion-list class="line-input">
             <!-- Post Suvery Questions -->

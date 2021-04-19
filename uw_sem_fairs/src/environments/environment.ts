@@ -4,7 +4,7 @@
 
 import 'zone.js/dist/zone-error';
 
-const ip = '10.0.1.5';
+const ip = '10.0.1.16';
 const baseUrl = `http://${ip}:4000`;
 
 export const environment = {

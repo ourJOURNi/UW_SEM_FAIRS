@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit, ElementRef, ChangeDetectorRef,  ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ModalController, NavParams } from '@ionic/angular';
 import { format } from 'date-fns';
@@ -76,19 +76,20 @@ export class FairPagePage implements OnInit, AfterViewInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private modal: ModalController,
+    private changeDetectorRef: ChangeDetectorRef,
     private fairs: FairsService) {
      }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.getFairDetails();
   }
 
   ngAfterViewInit() {
-    this.getFairDetails();
+    
 
   }
   getFairDetails() {
-    let id  = this.activatedRoute.snapshot.paramMap.get('id');
-    this.id = id;
+    // this.id = id;
     let usertype  = this.activatedRoute.snapshot.paramMap.get('usertype');
     this.usertype = usertype;
 
@@ -96,7 +97,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
     const faq = document.getElementById('faq');
     const booth = document.getElementById('boothPartners');
 
-    this.fairs.getFair(this.id).subscribe(
+    this.fairs.getFair(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(
       data => {
         console.log(data);
         this.usertype = usertype;
@@ -111,7 +112,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
         this.faqInfo = data['faq'];
         this.partners = data['partners'];
         this.description = data['description'];
-        
+
         switch (usertype) {
           case 'student':
             this.boothPartners = true;
@@ -149,6 +150,8 @@ export class FairPagePage implements OnInit, AfterViewInit {
             console.log('There was a problem getting the usertype');
             break;
         }
+
+        this.changeDetectorRef.detectChanges();
       }
     )
   }
