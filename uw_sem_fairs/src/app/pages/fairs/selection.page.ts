@@ -26,6 +26,7 @@ export class SelectionPage implements OnInit, OnDestroy {
   state: any;
   address: any;
   partners: any;
+  pageLoaded = false;
 
   fairsInfoSubscription: Subscription;
 
@@ -39,6 +40,9 @@ export class SelectionPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.pageLoaded = true;
+    }, 1500);
     this.fairsInfoSubscription = this.fairs.getFairs().subscribe(
       fairs => {
         this.allFairs = Object.values(fairs);

@@ -9,13 +9,11 @@
 <ion-content [scrollEvents]="true" (ionScroll)="this.getYPosition($event)">
 
   <!-- fab placed to the bottom start -->
-  <ion-fab class="ion-hide-md-up" vertical="bottom" horizontal="end" slot="fixed">
+  <!-- <ion-fab class="ion-hide-md-up" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="register(this.id)">
-
-      <!-- <ion-icon name="add" size="large"></ion-icon> -->
       <ion-icon src="../../assets/icons/register-icon.svg"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 
   <div>
     <!-- Info & Agenda -->
@@ -30,6 +28,9 @@
       <ion-row style="background: #f4f5f8; padding: 60px 0 24px 0;" class="ion-justify-content-center">
         <ion-col class="fair-header" size-xs="10" size-sm="10" size-md="8" size-lg="5">
           <div>
+            <ion-button class="ion-hide-md-up green-button" (click)="register(this.id)">
+              Register
+            </ion-button>
             <h2 style="margin-bottom: 0;" class="usertype">{{usertype}} Sign Up</h2>
             <h1 class="fair-name">{{title}}</h1>
             <h5 class="fair-date">

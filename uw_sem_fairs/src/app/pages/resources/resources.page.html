@@ -1,38 +1,146 @@
 <!-- Mobile Header -->
-<ion-header class="ion-hide-lg-up">
+<!-- <ion-header class="ion-hide-lg-up">
   <ion-toolbar>
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
     <ion-title slot="start">Resources</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<!-- 
+  Education
+  ---
+  Accredited Schools Online
+  ALPHA KAPPA ALPHA
+  Center 4 Success
+  City Year Detroit
+  Detroit Children Fund
+  DETROIT PUBLIC SCHOOLS COMMUNITY DISTRICT
+  DEVELOPING K.I.D.S.
+  EDSI SOLUTIONS
+  EPIPHANY EDUCATION CENTER
+  GENERAL ASSEMBLY
+  GRAND VALLEY STATE UNIVERSITY
+  JOURNI
+  MICHIGAN LEARNING CHANNEL
+  MICHIGAN STATE UNIVERSITY EXTENSION
+  NEW PARADIGM FOR EDUCATION (NPFE)
+  NOLAN ELEMENTARY MIDDLE SCHOOL
+  OAKLAND LITERACY COUNCIL
+  OAKLAND SCHOOLS
+  PONTIAC SCHOOL DISTRICT
+  ROSEN CLASSROOM
+  SOAR DETROIT
+  SPRINGBOARD COLLABORATIVE
+  ST. VINCENT AND SARAH FISHER CENTER
+  URBY EDUCATION, LLC
+
+  Family
+  ---
+  Brilliant Detroit
+  Detroit Champions for Hope
+  DETROIT PARENT NETWORK
+  DETROIT SOARS
+  LIL BRILLIANT MINDZ LLC
+  LOVIN’ TOUCH LEARNING CENTER
+  STARFISH FAMILY SERVICES
+
+  Community
+  ---
+  Access
+  Congress of Communities
+  DETROIT HISPANIC DEVELOPMENT CORPORATION
+  DETROIT PAL
+  DETROIT PUBLIC LIBRARY
+  FIRST STEP
+  OAKLAND COUNTY HEALTH DIVISION
+  OAKLAND MEDIATION CENTER
+  PLAYWORKS
+  ROCKET HOMES
+  THE ART EXPERIENCE
+  THE DETROIT CREATIVITY PROJECT
+  TIME FOR KIDS & FAMILY SERVICES
+  WAYNE METRO COMMUNITY ACTION AGENCY
+  WAYNE STATE UNIVERSITY CENTER FOR URBAN RESPONSES TO ENVIRONMENTAL STRESSORS
+  Youth Development Resource Center
+  Discovery Your Spark
+  Grow Detroits Young Talent
+  Detroit Summer Guide
+ -->
+
+<ion-content [scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
   <ion-grid>
-    <ion-row style="margin-top: 180px;" class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="10" size-md="9" size-lg="5">
-        <img src="../../../assets/icons/blue-book.svg">
-        <h1 style="color: #0055a5; font-size: 3em;">Resources</h1>
+
+    <!-- fab placed to the bottom end; Going back to the top of the page on the mobile view. -->
+    <ion-fab *ngIf="showFab" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="backToTop()">
+        <ion-icon name="arrow-up" size="large"></ion-icon>
+     </ion-fab-button>
+    </ion-fab>
+
+    <!-- Background Picture -->
+    <div class="background"></div>
+
+    <!-- Page Text -->
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="header" size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+        <h1>
+        <img class="resources-icon" src="../../../assets/icons/blue-book.svg">
+          Resources</h1>
         <p class="page-info">Here are some other organizations that offer many different afterchool and summer programs. Please visit their respective websites to learn more about them!</p>
       </ion-col>
     </ion-row>
 
-    <ion-row style="margin-bottom: 200px;" class="ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="9" size-lg="5">
-        <ion-row class="resource" *ngFor="let resource of resources">
-          <ion-col class="ion-align-items-center" style="height: 100px" size="2">
-            <img src="{{resource.logo}}" alt="">
-          </ion-col>
-          <ion-col class="ion-align-items-center" style="height: 100px" size="5">
-            <p class="name">{{resource.name}}</p>
-          </ion-col>
-          <ion-col class="ion-align-items-center" style="height: 100px" size="3">
-            <ion-button class="blue-button link ion-float-right" href="{{resource.url}}" target="_blank">
-              LINK
-            </ion-button>
-          </ion-col>
+    <!-- Filter Toolbar -->
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="filter ion-text-center" size-xs="12" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+        <ion-button [ngClass]="{'filter-button-active' : allResources }"  class="filter-button" (click)="allFilter()">All</ion-button>
+        <ion-button [ngClass]="{'filter-button-active' : education }" class="filter-button" (click)="educationFilter()">Education</ion-button>
+        <ion-button [ngClass]="{'filter-button-active' : family }" class="filter-button" (click)="familyFilter()">Family</ion-button>
+        <ion-button [ngClass]="{'filter-button-active' : community }" class="filter-button" (click)="communityFilter()">Community</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Filter Type -->
+    <!-- <ion-row class="filter-type ion-justify-content-center">
+      <ion-col size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+        <h3>Filter: {{this.filterType}}</h3>
+      </ion-col>
+    </ion-row> -->
+
+    <!-- Filtering Spinner -->
+    <ion-row *ngIf="this.filtering" class="ion-justify-content-center">
+      <ion-col class="filtering-wrapper ion-text-center" size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+        <ion-spinner color="primary" name="bubbles"></ion-spinner>
+      </ion-col>
+    </ion-row>
+
+    <!-- Resources -->
+    <ion-row id="resources" style="margin-bottom: 200px;" class="ion-justify-content-center">
+      <ion-col class="ion-align-items-center" size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+        <ion-row class="resource" *ngFor="let resource of loadedResources">
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="11">
+              <h2 class="name">{{resource.name}}</h2>
+              <img src="{{resource.logo}}" alt="">
+              <p class="description">{{resource.description}}</p>
+              <ion-button class="blue-button link" href="{{resource.url}}" target="_blank">
+                Website
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <!-- Back to Top -->
+    <ion-row class="ion-justify-content-center ion-hide-lg-up">
+      <ion-col size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+        <ion-button class="back-to-top" expand="full" (click)="backToTop()">
+          Back to Top
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

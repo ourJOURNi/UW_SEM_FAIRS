@@ -1,52 +1,125 @@
-
 #desktop-toolbar{
   --background: white;
   --color: #0055a5;
 }
-h1 {
-  margin: 30px 0;
+ion-content {
+  transition: 0.3s;
 }
+.background {
+  height: 600px;
+  background-image:
+    linear-gradient(0deg, rgba(0,85,165,0.5) 10%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Large.png');
+  background-position: 0px -150px;
+  background-repeat: none;
+  background-size: cover;
+  background-attachment: fixed;
+  // background: lightblue;
+}
+.header {
+  margin-top: 40px;
 
-.page-info {
-  color: #666;
-  height: auto;
+  h1 {
+    color: #222;
+    font-size: 2.5em;
+    margin: 30px 0;
+  }
+  .resources-icon {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
   position: relative;
-  top: -15px;
-  font-size: 1.15em;
+  top: 24px;
+  }
+}
+.page-info {
+  color: #222;
+  font-size: 1.45em;
   padding-bottom: 3em;
 }
-
-img {
-  height: 100px; width: 100px;
-  border-radius: 50px;
-  display: inline-block;
+.filtering-wrapper {
+  transition: 0.2s;
+  ion-spinner {
+    margin: 50px 0;
+  }
 }
-
-.name {
-  font-size: 1.4em;
-  color: #222;
-  font-weight: 500;
+.filter {
+  background: #f6fbff;
+  margin-bottom: 54px;
+  --background: none;
+  border: 2px solid #0055a5;
+  box-shadow: 1px 1px 26px #ddd;
+  padding: 2em 0em;
+  border-radius: 10px;
+    .filter-button {
+      --background: white;
+      --border-style: solid;
+      --border-width: 2px;
+      --border-color: #777;
+      --border-radius: 50px;
+      --box-shadow: none;
+      width: 110px;
+      height: 48px;
+      color: #777;
+      margin-right: 32px;
+      /* padding: 1em; */
+      font-size: 0.75em;
+      transition: 0.2s;
+    }
+    .filter-button-active {
+      --background: #faa71b;
+      --border-radius: 50px;
+      --border-style: solid;
+      --border-width: 2px;
+      --border-color: #ff984f;
+      --box-shadow: none;
+      width: 110px;
+      height: 48px;
+      color: white;
+      font-weight: 900;
+      margin-right: 32px;
+      font-size: 0.75em;
+      transition: 0.2s;
+    }
 }
-
-.description {
-  font-size: 1em;
-  line-height: 1.7em;
-  color: #333;
+.filter-type {
+  h3 {
+    color: #0055a5;
+  }
 }
-
+.back-to-top {
+  --background: #0055a5;
+  position: relative;
+  bottom: 54px;
+}
 .resource{
-  margin-bottom: 0px;
+  margin-bottom: 24px;
+  // background: #eee;
+  padding: 0.3em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 26px #ddd;
+  .name {
+    font-size: 1.4em;
+    color: #0055a5;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .description {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    white-space: pre-wrap;
+    color: #333;
+  }
+  .link {
+    width: 100px;
+    --background: #0055a5;
+  }
+  img {
+    height: 60px;
+  }
 }
-
-.link {
-  width: 60px;
-  margin-bottom: 30px;--background: #0055a5;
-}
-
 .orange-button {
   margin-bottom: 100px;
 }
-
 .progress-container {
   width: 100%;
   height: 8px;
@@ -56,11 +129,83 @@ img {
   z-index: 9999;
   box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
 }
-
 .progress-bar {
   background: #faa71b;
   width: 0%;
   transition-timing-function: ease-out;
   transition: width .15s;
   height: 100vh;
+}
+
+ion-fab {
+  opacity: 0;
+  padding-right: 2%;
+  animation: fab-slide-up 0.5s ease-out forwards;
+
+  ion-fab-button {
+    --color-activated: white;
+    --background-activated: #FFB351;
+    --background: white;
+
+    ion-icon {
+    color: #0055a5;
+    }
+  }
+}
+@keyframes fab-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .background {
+    height: 200px;
+    background-image:
+      linear-gradient(0deg, rgba(0,85,165,0.5) 10%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Small.png');
+      background-position: 0px -50px;
+    background-repeat: none;
+    background-size: contain;
+    background-attachment: fixed;
+  }
+  .header {
+    margin-top: 0px;
+    h1 {
+      color: #222;
+      font-size: 2em;
+      margin: 30px 0;
+    }
+    .resources-icon {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    left: 4px;
+    }
+  }
+  .resources-icon {
+    height: 80px;
+    width: 80px;
+  }
+  .page-info {
+    padding: 0 1em;
+    font-size: 1.1em;
+    color: #222;
+  }
+  .filter {
+    margin: 40px;
+    background: #f6fbff;
+    border-radius: 0px;
+    box-shadow: 1px 1px 26px #ddd;
+  }
+  .resource{
+    img {
+      height: 50px;
+    }
+  }
 }

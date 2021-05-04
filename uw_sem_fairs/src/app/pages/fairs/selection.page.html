@@ -8,17 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <!-- Desktop -->
-  <ion-grid class="ion-hide-md-down background-photo-large">
-    <ion-row class="">
-      <ion-col size="12">
-      </ion-col>
-    </ion-row>
-
+  <ion-grid *ngIf="this.pageLoaded">
+    <div class="background"></div>
     <!-- Fairs intro text -->
-    <ion-row>
-      <ion-col class="form-wrapper" size-md="3" size-lg="4">
-        <h3>Register for a Fair</h3>
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="form-wrapper" size-xs="11" size-sm="11" size-md="8" size-lg="6">
+        <h3>Register for Fair</h3>
         <p class="desciption">Whether you are a Student, Chaperone, Volunteer, or Booth Partner, register for a United Way Southeast Michigan Fair Today!</p>
         <ion-list class="line-input">
           <ion-item>
@@ -28,49 +23,6 @@
           </ion-item>
         </ion-list>
 
-
-        <div [className]="!selectedFair ? 'off' : 'on'">
-          <ion-list class="line-input">
-            <ion-item>
-              <ion-select (ionChange)="setUsertype($event)"  placeholder="Select user type">
-                <ion-select-option value="student">Student</ion-select-option>
-                <ion-select-option value="volunteer">Volunteer</ion-select-option>
-                <ion-select-option value="chaperone">Chaperone</ion-select-option>
-                <ion-select-option value="partner">Partner</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-        </div>
-
-        <div [className]="!selectedUsertype ? 'off' : 'on'">
-          <ion-button (click)="fairPage()" class="orange-button"
-          [disabled]="!fair && !usertype">
-            Next
-          </ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <!-- Mobile -->
-  <ion-grid class="ion-hide-md-up">
-    <ion-row class="background-photo-small">
-      <ion-col size="12">
-      </ion-col>
-    </ion-row>
-
-    <!-- Fairs intro text -->
-    <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="4">
-        <h1>Register for a United Way Southeast Michigan Fair.</h1>
-        <p class="desciption">Text about this page goes here. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid officiis dicta at iste rerum illo nulla non. Accusamus praesentium nisi provident numquam, quaerat atque veritatis, vitae exercitationem soluta culpa amet.</p>
-        <ion-list class="line-input">
-          <ion-item>
-            <ion-select (ionChange)="setFair($event)" placeholder="Select fair">
-              <ion-select-option *ngFor="let fair of allFairs" value="{{fair.title}}">{{fair.title}}</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
 
         <div [className]="!selectedFair ? 'off' : 'on'">
           <ion-list class="line-input">
