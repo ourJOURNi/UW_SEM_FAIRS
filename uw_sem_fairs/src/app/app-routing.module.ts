@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'selection',
     loadChildren: () => import('./pages/fairs/selection.module').then( m => m.SelectionPageModule)
+  },
+  {
+    path: 'download',
+    loadChildren: () => import('./pages/download/download.module').then( m => m.DownloadPageModule)
   }
 ];
 

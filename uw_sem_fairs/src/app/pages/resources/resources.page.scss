@@ -4,12 +4,14 @@
 }
 ion-content {
   transition: 0.3s;
+  position: relative;
+  top: -24px;
 }
 .background {
-  height: 600px;
+  // height: 600px;
   background-image:
     linear-gradient(0deg, rgba(0,85,165,0.5) 10%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Large.png');
-  background-position: 0px -150px;
+  // background-position: 0px -150px;
   background-repeat: none;
   background-size: cover;
   background-attachment: fixed;
@@ -44,40 +46,41 @@ ion-content {
 }
 .filter {
   background: #f6fbff;
-  margin-bottom: 54px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
   --background: none;
   border: 2px solid #0055a5;
-  box-shadow: 1px 1px 26px #ddd;
-  padding: 2em 0em;
+  box-shadow: 1px 1px 26px #22242859;
+  padding: 1em 0em;
   border-radius: 10px;
     .filter-button {
-      --background: white;
-      --border-style: solid;
-      --border-width: 2px;
-      --border-color: #777;
+      --background: #0055a51c;
       --border-radius: 50px;
       --box-shadow: none;
-      width: 110px;
-      height: 48px;
-      color: #777;
-      margin-right: 32px;
+      width: 80px;
+      height: 28px;
+      color: #0055a5;
+      // margin-right: 32px;
       /* padding: 1em; */
-      font-size: 0.75em;
+      font-size: 0.55em;
       transition: 0.2s;
+      position: relative;
+      top: -8px;
     }
     .filter-button-active {
-      --background: #faa71b;
+      --background: #f57814;
       --border-radius: 50px;
       --border-style: solid;
       --border-width: 2px;
       --border-color: #ff984f;
       --box-shadow: none;
-      width: 110px;
-      height: 48px;
+      width: 70px;
+      height: 28px;
       color: white;
       font-weight: 900;
-      margin-right: 32px;
-      font-size: 0.75em;
+      // margin-right: 32px;
+      font-size: 0.55em;
       transition: 0.2s;
     }
 }
@@ -96,12 +99,14 @@ ion-content {
   // background: #eee;
   padding: 0.3em;
   border-radius: 5px;
-  box-shadow: 1px 1px 26px #ddd;
+  box-shadow: 1px -1px 10px #22242859;
   .name {
     font-size: 1.4em;
     color: #0055a5;
     font-weight: 500;
     margin-bottom: 20px;
+    width: 320px;
+
   }
   .description {
     font-size: 1.2em;
@@ -111,6 +116,7 @@ ion-content {
   }
   .link {
     width: 100px;
+    margin-top: 54px;
     --background: #0055a5;
   }
   img {
@@ -164,20 +170,35 @@ ion-fab {
 }
 @media screen and (max-width: 600px) {
   .background {
-    height: 200px;
+    height: 300px;
     background-image:
       linear-gradient(0deg, rgba(0,85,165,0.5) 10%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Small.png');
-      background-position: 0px -50px;
     background-repeat: none;
-    background-size: contain;
+    background-size: auto 400px;
     background-attachment: fixed;
+    border-radius: 0 0px 115px 0px;
+    border-bottom: 14px solid #FAA71b;
+    h1 {
+      color: white;
+      background: #f57814;
+      width: 128px;
+      border-radius: 5px;
+      position: relative;
+      left: 12px;
+      top: 12px;
+      padding: 0.25em;
+    }
   }
   .header {
     margin-top: 0px;
     h1 {
-      color: #222;
-      font-size: 2em;
-      margin: 30px 0;
+      margin-top: 20px;
+      font-size: 26px;
+      background: white;
+      color: #0055a5;
+      width: 240px;
+      border-radius: 5px;
+      margin: 1em;
     }
     .resources-icon {
     height: 50px;
@@ -189,8 +210,10 @@ ion-fab {
     }
   }
   .resources-icon {
-    height: 80px;
-    width: 80px;
+    height: 40px;
+    width: 37px;
+    position: relative;
+    top: 8px;
   }
   .page-info {
     padding: 0 1em;
@@ -198,14 +221,43 @@ ion-fab {
     color: #222;
   }
   .filter {
-    margin: 40px;
-    background: #f6fbff;
+    height: 24px;
+    margin-bottom: 20px;
     border-radius: 0px;
-    box-shadow: 1px 1px 26px #ddd;
+    border: none;
+    box-shadow: 1px 1px 26px #22242859;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 24px;
+    z-index: 9999;
+    margin-top: 40px;
+    // padding: 1.7em 0em 0.5em 0;
+
   }
   .resource{
+    margin: 10px;
+    height: 55px;
+    overflow: hidden;
+    background: #0055a5;
+    transition: 0.5s;
+    .name {
+      font-size: 0.9em;
+      margin-bottom: 32px;
+      color: white;
+      transition: 0.5s;
+    }
     img {
       height: 50px;
+    }
+    ion-icon {
+      font-size: 1.6em;
+      color: white;
+      background: #0055a5;
+      border-radius: 50px;
+      position: relative;
+      top: 10px;
+      float: right;
+      transition: 0.5s;
     }
   }
 }

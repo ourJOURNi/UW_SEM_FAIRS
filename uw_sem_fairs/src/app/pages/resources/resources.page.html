@@ -73,29 +73,14 @@
 (ionScroll)="logScrolling($event)">
   <ion-grid>
 
-    <!-- fab placed to the bottom end; Going back to the top of the page on the mobile view. -->
-    <ion-fab *ngIf="showFab" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="backToTop()">
-        <ion-icon name="arrow-up" size="large"></ion-icon>
-     </ion-fab-button>
-    </ion-fab>
-
     <!-- Background Picture -->
-    <div class="background"></div>
-
-    <!-- Page Text -->
-    <ion-row class="ion-justify-content-center">
-      <ion-col class="header" size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
-        <h1>
-        <img class="resources-icon" src="../../../assets/icons/blue-book.svg">
-          Resources</h1>
-        <p class="page-info">Here are some other organizations that offer many different afterchool and summer programs. Please visit their respective websites to learn more about them!</p>
-      </ion-col>
-    </ion-row>
+    <div class="background">
+      <h1>Resources</h1>
+    </div>
 
     <!-- Filter Toolbar -->
-    <ion-row class="ion-justify-content-center">
-      <ion-col class="filter ion-text-center" size-xs="12" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+    <ion-row class="filter ion-justify-content-center">
+      <ion-col class=" ion-text-center" size-xs="12" size-sm="11" size-md="9" size-lg="8" size-xl="7">
         <ion-button [ngClass]="{'filter-button-active' : allResources }"  class="filter-button" (click)="allFilter()">All</ion-button>
         <ion-button [ngClass]="{'filter-button-active' : education }" class="filter-button" (click)="educationFilter()">Education</ion-button>
         <ion-button [ngClass]="{'filter-button-active' : family }" class="filter-button" (click)="familyFilter()">Family</ion-button>
@@ -116,13 +101,20 @@
         <ion-spinner color="primary" name="bubbles"></ion-spinner>
       </ion-col>
     </ion-row>
+    <!-- <div style="margin-top: -66px; transform: rotate(0deg
+    );">
+      <svg fill="#f6fbff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <path class="shape-fill-path" d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"></path>
+      </svg>
+    </div> -->
 
     <!-- Resources -->
-    <ion-row id="resources" style="margin-bottom: 200px;" class="ion-justify-content-center">
+    <ion-row id="resources" class="ion-justify-content-center">
+      <div style="margin-bottom: 54px;"></div>
       <ion-col class="ion-align-items-center" size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
-        <ion-row class="resource" *ngFor="let resource of loadedResources">
+        <ion-row #resourceList class="resource" *ngFor="let resource of loadedResources; index as i">
           <ion-row class="ion-justify-content-center">
-            <ion-col size="11">
+            <ion-col size="9">
               <h2 class="name">{{resource.name}}</h2>
               <img src="{{resource.logo}}" alt="">
               <p class="description">{{resource.description}}</p>
@@ -130,18 +122,21 @@
                 Website
               </ion-button>
             </ion-col>
+            <ion-col class="ion-align-items-center" size="2">
+              <ion-icon id="dropdown-icon" (click)="resourceToggle(i, resource)" name="chevron-down-circle-outline"></ion-icon>
+            </ion-col>
           </ion-row>
         </ion-row>
       </ion-col>
     </ion-row>
 
     <!-- Back to Top -->
-    <ion-row class="ion-justify-content-center ion-hide-lg-up">
+    <!-- <ion-row class="ion-justify-content-center ion-hide-lg-up">
       <ion-col size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
         <ion-button class="back-to-top" expand="full" (click)="backToTop()">
           Back to Top
         </ion-button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
 </ion-content>
