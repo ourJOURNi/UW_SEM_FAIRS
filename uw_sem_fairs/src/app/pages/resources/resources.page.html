@@ -79,6 +79,11 @@
     </div>
 
     <!-- Filter Toolbar -->
+    <ion-row class="ion-justify-content-center">
+      <ion-col style="margin-top: 1em;" size-xs="11" size-sm="10" size-md="9" size-lg="6" size-xl="5">
+        <p class="page-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi pariatur obcaecati voluptate alias, perferendis voluptatum illo dolorem, fugiat assumenda commodi aliquam quo molestiae quidem? Explicabo hic nesciunt rem veniam delectus?</p>
+      </ion-col>
+    </ion-row>
     <ion-row class="filter ion-justify-content-center">
       <ion-col class=" ion-text-center" size-xs="12" size-sm="11" size-md="9" size-lg="8" size-xl="7">
         <ion-button [ngClass]="{'filter-button-active' : allResources }"  class="filter-button" (click)="allFilter()">All</ion-button>
@@ -111,7 +116,7 @@
     <!-- Resources -->
     <ion-row id="resources" class="ion-justify-content-center">
       <div style="margin-bottom: 54px;"></div>
-      <ion-col class="ion-align-items-center" size-xs="11" size-sm="10" size-md="9" size-lg="8" size-xl="7">
+      <ion-col class="ion-align-items-center" size-xs="11" size-sm="10" size-md="9" size-lg="6" size-xl="5">
         <ion-row #resourceList class="resource" *ngFor="let resource of loadedResources; index as i">
           <ion-row class="ion-justify-content-center">
             <ion-col size="9">
@@ -122,7 +127,7 @@
                 Website
               </ion-button>
             </ion-col>
-            <ion-col class="ion-align-items-center" size="2">
+            <ion-col class="ion-align-items-center ion-float-left" size="2">
               <ion-icon id="dropdown-icon" (click)="resourceToggle(i, resource)" name="chevron-down-circle-outline"></ion-icon>
             </ion-col>
           </ion-row>

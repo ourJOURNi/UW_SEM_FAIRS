@@ -465,8 +465,12 @@ export class ResourcesPage implements OnInit {
           resource.el.style.height = '65px';
           resource.el.style.background = '#0055a5';
           resource.el.style.margin = '10px';
+          resource.el.style.padding = '0';
+          resource.el.style.borderRadius = '0px';
+          resource.el.style.boxShadow = 'none';
           resource.el.children[0].children[0].children[0].style.color = 'white';
           resource.el.children[0].children[0].children[0].style.fontSize = '1em';
+          // Add Box Shadow to Resource Wrapper
           resource.el.children[0].children[1].children[0].name = 'chevron-down-circle-outline';
           resource.el.children[0].children[1].children[0].style.background = '#0055a5';
           return;
@@ -475,6 +479,9 @@ export class ResourcesPage implements OnInit {
         resource.el.style.height = 'auto';
         resource.el.style.background = 'white';
         resource.el.style.margin = '54px 10px 54px 10px';
+        resource.el.style.padding = '1em';
+        resource.el.style.borderRadius = '5px';
+        resource.el.style.boxShadow = '1px 1px 68px #cecece';
         resource.el.children[0].children[0].children[0].style.color = '#0055a5';
         resource.el.children[0].children[0].children[0].style.fontSize = '1.4em';
         resource.el.children[0].children[1].children[0].name = 'chevron-up-circle-outline';

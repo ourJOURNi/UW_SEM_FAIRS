@@ -19,8 +19,13 @@
     <!-- Header -->
     <ion-row class="header ion-justify-content-center">
       <ion-col class="message-wrapper ion-hide-lg-down" size="6">
-        <h1>United Way Southeastern Michigan Fairs</h1>
+        <!-- <h1>United Way Southeastern Michigan Fairs</h1> -->
         <h3>Upcoming Fair: </h3>
+        <div class="fair-info">
+          <p style="color: #00c400; font-weight: 600;">Innovation Tech Fair</p>
+          <p style="color: white;">June 17th, 2021</p>
+          <p style="color: white;">9:00 AM</p>
+        </div>
         <ion-toolbar>
           <ion-buttons slot="start">
             <ion-button class="header-register-for-fair" (click)="fairsPage()">
@@ -28,7 +33,7 @@
             </ion-button>
           </ion-buttons>
         </ion-toolbar>
-        <ion-toolbar>
+        <!-- <ion-toolbar>
           <ion-buttons slot="start">
             <ion-button (click)="resources()">
               Resources
@@ -40,12 +45,12 @@
               Download
             </ion-button>
           </ion-buttons>
-        </ion-toolbar>
+        </ion-toolbar> -->
       </ion-col>
     </ion-row>
     <!-- Upcoming -->
-    <ion-row class="upcoming ion-justify-content-center ion-hide-lg-up">
-      <ion-col size-xs="11" size-sm="10" size-md="9">
+    <ion-row class="ion-justify-content-center ion-hide-lg-up">
+      <ion-col style="padding: 2em;" class="upcoming" size-xs="11" size-sm="10" size-md="8">
         <h3>Upcoming Fair</h3>
         <div class="fair-info">
           <p style="color: #00c400; font-weight: 600;">Innovation Tech Fair</p>
@@ -67,6 +72,12 @@
         </div>
       </ion-col>
     </ion-row>
+    <!-- After the fair -->
+    <!-- <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="12" size-sm="11" size-lg="8">
+        <div class="down-arrow-illustration"></div>
+      </ion-col>
+    </ion-row> -->
     <!-- FYF -->
     <ion-row class="fyf ion-justify-content-center">
       <ion-col  size-xs="12" size-sm="11" size-lg="8">
@@ -77,31 +88,67 @@
       </ion-col>
       <ion-col style="margin-top: 100px;" class="fyf-info ion-text-center" size-sm="11" size-lg="10">
         <ion-row class="ion-justify-content-center">
-          <ion-col class="fyf-feature ion-text-center" size-xs="11" size-sm="11" size-md="5" size-lg="2.8">
+          <ion-col class="fyf-feature ion-hide-lg-up ion-text-center" size-xs="11" size-sm="11" size-md="6">
             <div class="fyf-feature-icon">
               <ion-icon name="briefcase-outline"></ion-icon>
             </div>
-            <p>Search for Jobs</p>
+            <div class="ion-text-center">
+              <p>Search for Jobs</p>
+            </div>
           </ion-col>
-          <ion-col class="fyf-feature ion-text-center" size-xs="11" size-sm="11" size-md="5" size-lg="2.8">
+          <ion-col class="fyf-feature ion-hide-lg-up ion-text-center" size-xs="11" size-sm="11" size-md="5">
             <div class="fyf-feature-icon">
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
-              <p>Go to local events</p>
+              <p>Go to local Events.</p>
           </ion-col>
-          <ion-col class="fyf-feature ion-text-center" size-xs="11" size-sm="11" size-md="5" size-lg="2.8">
+          <ion-col class="fyf-feature ion-hide-lg-up ion-text-center" size-xs="11" size-sm="11" size-md="5">
             <div class="fyf-feature-icon">
               <ion-icon name="newspaper-outline"></ion-icon>
             </div>
-              <p>Share and comment on Posts in the community.</p>
+              <p>Share and comment on Posts in FYF community.</p>
           </ion-col>
-          <ion-col class="fyf-feature ion-text-center" size-xs="11" size-sm="11" size-md="5" size-lg="2.8">
+          <ion-col class="fyf-feature ion-hide-lg-up ion-text-center" size-xs="11" size-sm="11" size-md="5">
             <div class="fyf-feature-icon">
               <ion-icon src="../assets/icon/question-inactive.svg"></ion-icon>
             </div>
-              <p>Reach out to a Mentor verified by United Way Southeastern Michigan.</p>
+              <p>Reach out to a Mentor verified by United Way.</p>
           </ion-col>
-          <ion-col class="ion-text-center" size-xs="11" size-sm="11" size-md="5" size-lg="2.8">
+          <!-- Desktop -->
+          <ion-col class="ion-hide-lg-down" style="height: 350px; display: flex; align-items: center; text-align: right;" size="5.5">
+            <div class="fyf-feature-desktop" style="position: relative; left: 30px;">
+              <div style="margin-top: 100px;">
+                <ion-icon name="briefcase-outline"></ion-icon>
+                <p>Search for Jobs.</p>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="ion-hide-lg-down" style="height: 350px; display: flex; align-items: center;" size="5.5">
+            <div class="fyf-feature-desktop" style="position: relative; right: 30px;">
+              <div style="margin-top: 100px;">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <p>Go to local Events.</p>
+              </div>
+            </div>
+          </ion-col>
+          <div style="height: 100px;"></div>
+          <ion-col class="ion-hide-lg-down" style="height: 350px; display: flex; align-items: center;" size="5.5">
+            <div class="fyf-feature-desktop" style="position: relative; left: 30px;">
+              <div style="margin-top: 100px;">
+                <ion-icon name="newspaper-outline"></ion-icon>
+                <p>Share and comment on Posts in FYF community.</p>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="ion-hide-lg-down" style="height: 350px; display: flex; align-items: center;" size="5.5">
+            <div class="fyf-feature-desktop" style="position: relative; right: 30px;">
+              <div style="margin-top: 100px;">
+                <ion-icon src="../assets/icon/question-inactive.svg"></ion-icon>
+                <p>Reach out to a Mentor verified by United Way.</p>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="ion-text-center" size-xs="11" size-sm="11" size-md="5" size-lg="6">
             <ion-button class="landing-page-button" href="https://findyourfuturesem.org">
               Go to FYF
             </ion-button>
@@ -109,19 +156,19 @@
         </ion-row>
       </ion-col>
     </ion-row>
-    <!-- Background Picture -->
-    <ion-row>
+    <ion-row class="ion-justify-content-center">
       <ion-col  size-xs="12" size-sm="11" size-lg="8">
-        <h1 class="section-header">Resources</h1>
+        <h1 class="ion-hide-md-up" class="section-header">Resources</h1>
       </ion-col>
     </ion-row>
-    <ion-row class="second-background-photo">
+    <!-- Background Picture -->
+    <ion-row class="second-background-photo ion-justify-content-center">
     </ion-row>
     <!-- Resources -->
     <ion-row class="resources ion-justify-content-center">
       <ion-col size-xs="11" size-sm="11" size-lg="8">
         <ion-row class="ion-justify-content-center">
-          <ion-col class="resource" *ngFor="let resource of resourcesPreivew" size-xs="11" size-sm="11" size-md="4" size-lg="2.5">
+          <ion-col class="resource" *ngFor="let resource of resourcesPreivew" size-xs="11" size-sm="11" size-md="4" size-lg="5" size-xl="5">
             <h4>{{resource.name}}</h4>
             <img src="{{resource.logo}}" alt="" srcset="">
             <p>{{resource.description}}</p>
@@ -140,17 +187,16 @@
       </ion-col>
     </ion-row>
     <!-- Background Picture -->
-
-    <ion-row>
-      <ion-col  size-xs="12" size-sm="11" size-lg="8">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="12" size-sm="11" size-lg="8">
         <h1 class="section-header">About Us</h1>
       </ion-col>
     </ion-row>
-    <ion-row class="third-background-photo">
+    <ion-row class="third-background-photo ion-justify-content-center">
     </ion-row>
     <!-- About United Way Southeast Michigan -->
     <ion-row class="about ion-justify-content-center">
-      <ion-col style="border-bottom: 7px solid #001b35;" size-xs="11" size-sm="11" size-lg="5.5">
+      <ion-col style="border-bottom: 7px solid #001b35;" size-xs="11" size-sm="11" size-lg="8">
         <div class="about-item-wrapper">
           <img height="50" src="../../../assets/United_Way_Logo_1.svg" alt="United Way Logo">
         <h1>Who is United Way?</h1>
@@ -165,7 +211,7 @@
             <ion-button href="https://www.unitedway.org/" class="landing-page-button">Website</ion-button>
           </div>
       </ion-col>
-      <ion-col size-xs="11" size-sm="11" size-lg="5.5">
+      <ion-col size-xs="11" size-sm="11" size-lg="8">
         <div class="about-item-wrapper">
           <img height="70" src="../../../assets/uwse_logo.png" alt="United Way Southeastern Michigan Logo">
           <h1>Who is United Way Southeastern Michigan?</h1>
@@ -183,16 +229,16 @@
     </ion-row>
     <!-- Footer -->
     <ion-row class="footer ion-justify-content-center">
-      <ion-col size="8">
+      <ion-col size-xs="8" size-sm="7" size-md="5" size-lg="4">
         <img height="50" src="../../../assets/United-Way-symbol.svg" alt="" srcset="">
         <p class="footer-message">Follow United Way Southeastern Michigan on these platforms:</p>
       </ion-col>
-      <ion-col size-xs="3">
+      <ion-col size-xs="3" size-sm="7" size-md="5" size-lg="4">
         <a href="https://www.facebook.com/UnitedWaySEM/" class="icon-wrapper ion-text-center"><ion-icon name="logo-facebook"></ion-icon></a>
         <a href="https://www.instagram.com/unitedwaysem/?hl=en" class="icon-wrapper ion-text-center"><ion-icon name="logo-instagram"></ion-icon></a>
         <a href="https://twitter.com/UnitedWaySEM?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="icon-wrapper ion-text-center"><ion-icon name="logo-twitter"></ion-icon></a>
       </ion-col>
-      <ion-col size="11">
+      <ion-col size-xs="11" size-sm="7" size-md="5" size-lg="8">
         <p style="color: white;">Terms of Use</p>
         <p style="color: white;">Privacy Policy</p>
       </ion-col>

@@ -9,7 +9,10 @@ ion-label {
   top: -4px;
   transition: 500ms;
   box-shadow: 1px 1px 26px rgb(0 0 0 / 10%);
-
+  h1 {
+    font-size: 1.4em;
+    margin-left: 1em;
+  }
   ion-button {
     height: 70px;
     // width: 80px;
