@@ -29,7 +29,7 @@ export class ResourcesPage implements OnInit {
       url: 'https://www.accreditedschoolsonline.org/resources/zoom-classroom-tips/',
       logo: 'https://www.accreditedschoolsonline.org/app/themes/sonic-theme-child/assets/dist/img/logo-header.svg',
       name: 'Accredited Schools Online',
-      description: 'Zoom classrooms: Tips for students taking online classes.',
+      description: 'Zoom classrooms: Tips for students taking online classes. I must for todays working environment.',
       type: 'Education',
       toggled: false
     },
@@ -349,18 +349,10 @@ export class ResourcesPage implements OnInit {
       toggled: false
     },
     {
-      url: '',
-      logo: '',
-      name: '',
-      description: '',
-      type: 'Community',
-      toggled: false
-    },
-    {
       url: 'https://discoveryourspark.org/program-finder/#',
       logo: '../../assets/logos/DYS-logo.png',
       name: 'Discover Your Spark',
-      description: 'Lorem',
+      description: 'Afterschool activities and summer programming lifts up the skills youth need to succeed in school, careers, and in life. It gives children and youth opportunities to spark a new interest, offer a youth centered space, build academic motivation, provide a safe place, and to get connected.',
       type: 'Community',
       toggled: false
     },
@@ -368,18 +360,18 @@ export class ResourcesPage implements OnInit {
       url: 'https://gdyt.org/',
       logo: '../../assets/logos/GDYT-logo.png',
       name: "Grow Detroit's Youth Talent (GDYT)",
-      description: 'Lorem',
+      description: 'Grow Detroit’s Young Talent (GDYT) is a citywide summer jobs program that trains and employs young adults between the ages of 14 and 24 for up to 120 hours. Youth participants must be permanent residents of the City of Detroit and be eligible to work in the United States. There are a broad range of jobs available to the participants. Examples of jobs include: community cleanups, event planning, accounting, retail and the Junior Police or Fire Cadets to name a few. Last year, over 8,000 local youth received employment, which is our goal again this year.',
       type: 'Community',
       toggled: false
     },
-    {
-      url: 'https://detroitsummerguide.org/',
-      logo: '../../assets/logos/DSG-logo.png',
-      name: 'Detroit Summer Guide',
-      description: 'Lorem',
-      type: 'Community',
-      toggled: false
-    },
+    // {
+    //   url: 'https://detroitsummerguide.org/',
+    //   logo: '../../assets/logos/DSG-logo.png',
+    //   name: 'Detroit Summer Guide',
+    //   description: 'Lorem',
+    //   type: 'Community',
+    //   toggled: false
+    // },
 
 
     // Family
@@ -403,7 +395,7 @@ export class ResourcesPage implements OnInit {
       url: 'https://lilbrilliantmindz.com/',
       logo: 'https://unitedwaysem.org/wp-content/uploads/CFB4055E-1F33-4384-81AD-91EB5207D2AB-Angela-Hayes-768x283.jpeg',
       name: 'Lil Brilliant Mindz LLC',
-      description: 'We provide free Early Headstart to low income families.',
+      description: 'We provide free Early Headstart to low income families in the detroit area.',
       type: 'Family',
       toggled: false
     },
@@ -462,30 +454,43 @@ export class ResourcesPage implements OnInit {
       if( i === index ) {
         if(resource.toggled) {
           resource.toggled = false;
-          resource.el.style.height = '65px';
-          resource.el.style.background = '#0055a5';
-          resource.el.style.margin = '10px';
+          resource.el.style.height = '76px';
+          resource.el.style.background = '#e3f3ff';
+          resource.el.style.margin = '29px auto';
           resource.el.style.padding = '0';
-          resource.el.style.borderRadius = '0px';
+          resource.el.style.borderRadius = '8px';
+          resource.el.style.borderLeft = '5px solid #0055a5';
           resource.el.style.boxShadow = 'none';
-          resource.el.children[0].children[0].children[0].style.color = 'white';
-          resource.el.children[0].children[0].children[0].style.fontSize = '1em';
-          // Add Box Shadow to Resource Wrapper
+          // Resource Text Color & Font Size when NOT activated.
+          resource.el.children[0].children[0].children[0].style.color = '#222';
+          resource.el.children[0].children[0].children[0].style.background = 'none';
+          resource.el.children[0].children[0].children[0].style.padding = '0.4em';
+          resource.el.children[0].children[0].children[0].style.fontSize = '1.2em';
+          // When Resource NOT activated, arrow should be pointing DOWN.
           resource.el.children[0].children[1].children[0].name = 'chevron-down-circle-outline';
+          // Non-Activated arrow background should be BLUE.
           resource.el.children[0].children[1].children[0].style.background = '#0055a5';
           return;
         }
         resource.toggled = true;
+        // When resource is ACTIVATED, add Box Shadow, change background color to White,
+        // and
         resource.el.style.height = 'auto';
         resource.el.style.background = 'white';
         resource.el.style.margin = '54px 10px 54px 10px';
         resource.el.style.padding = '1em';
         resource.el.style.borderRadius = '5px';
+        resource.el.style.borderLeft = '5px solid #faa71b';
         resource.el.style.boxShadow = '1px 1px 68px #cecece';
-        resource.el.children[0].children[0].children[0].style.color = '#0055a5';
+        // Resource Text Color & Font Size when ACTIVATED.
+        resource.el.children[0].children[0].children[0].style.color = 'white';
+        resource.el.children[0].children[0].children[0].style.background = 'rgb(51 124 192)';
+        resource.el.children[0].children[0].children[0].style.padding = '0.4em';
         resource.el.children[0].children[0].children[0].style.fontSize = '1.4em';
+        // When Resource ACTIVATED, arrow should be pointing UP.
         resource.el.children[0].children[1].children[0].name = 'chevron-up-circle-outline';
-        resource.el.children[0].children[1].children[0].style.background = '#f57814';
+        // ACTIVATED arrow background should be ORANGE.
+        resource.el.children[0].children[1].children[0].style.background = '#faa71b';
         return;
       }
     });

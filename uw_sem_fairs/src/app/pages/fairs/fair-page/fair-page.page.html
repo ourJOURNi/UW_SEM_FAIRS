@@ -25,11 +25,14 @@
         <ion-col *ngIf="this.usertype === 'chaperone'" class="ion-hide-md-up background-photo-chaperone-small" size="12"></ion-col>
         <ion-col *ngIf="this.usertype === 'volunteer'" class="ion-hide-md-up background-photo-volunteer-small" size="12"></ion-col>
       </ion-row> -->
-      <ion-row style="background: #f4f5f8; padding: 60px 0 24px 0;" class="ion-justify-content-center">
+      <ion-row style="background: #f8f8f8; padding: 60px 0 24px 0;" class="ion-justify-content-center">
         <ion-col class="fair-header" size-xs="10" size-sm="10" size-md="8" size-lg="5">
           <div>
             <ion-button class="ion-hide-md-up green-button" (click)="register(this.id)">
               Register
+            </ion-button>
+            <ion-button class="ion-hide-md-down back-button" (click)="backToSelection()">
+              Back
             </ion-button>
             <h2 style="margin-bottom: 0;" class="usertype">{{usertype}} Sign Up</h2>
             <h1 class="fair-name">{{title}}</h1>
@@ -43,26 +46,20 @@
             </ion-button>
           </div>
         </ion-col>
+
+        <!-- Agena -->
+        <ion-col class="agenda" size-xs="10" size-sm="10" size-md="8" size-lg="5">
+          <ion-list style="--background: white; padding: 1.7em; box-shadow: 1px 1px 10px rgba(0,0,0,0.14); border-radius: 10px;">
+            <ion-item class="agenda-item" *ngFor="let item of agenda" lines="none">
+              <ion-badge slot="start">{{item.time}}</ion-badge>
+              <ion-label>
+                <p style="color: #333; font-size: 1.2em; font-weight: 600;">{{item.title}}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
       </ion-row>
     </ion-grid>
-  </div>
-
-  <!-- Agenda -->
-  <div id="agenda">
-    <ion-row style="padding: 100px 0;" class="ion-justify-content-center">
-      <ion-col class="agenda" size-xs="10" size-sm="10" size-md="8" size-lg="5">
-
-        <h2>Agenda</h2>
-        <ion-list style="--background: white;">
-          <ion-item class="agenda-item" *ngFor="let item of agenda" lines="none">
-            <ion-badge slot="start">{{item.time}}</ion-badge>
-            <ion-label>
-              <p style="color: #0055a5; font-size: 1.2em; font-weight: 600;">{{item.title}}</p>
-            </ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
   </div>
 
   <!-- Parking -->
@@ -97,12 +94,12 @@
   </div>
 
   <!-- Booth Partners -->
-  <div #boothPartners style="background: #f4f5f8; padding: 100px 0;" id="boothPartners" [className]="boothPartnersPopIn ? 'booth-partners' : 'off'">
+  <div #boothPartners style="padding: 100px 0;" id="boothPartners" [className]="boothPartnersPopIn ? 'booth-partners' : 'off'">
     <ion-grid>
       <ion-row class="ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="6">
+        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="10">
           <h2>Booth Partners</h2>
-          <div *ngFor="let partner of partners">
+          <!-- <div *ngFor="let partner of partners">
             <div *ngIf="partner.verified === true">
               <ion-row style="margin-bottom: 80px;">
                 <ion-col size="4">
@@ -116,7 +113,17 @@
                 </ion-col>
               </ion-row>
             </div>
-          </div>
+          </div> -->
+          <ion-row>
+            <ion-col *ngFor="let partner of partners; let i = index;" style="padding: 1em; margin: 0.3em; box-shadow: 1px 1px 10px rgba(0,0,0,0.08); height: 600px; margin-bottom: 100px; border-radius: 10px;" size="3.6">
+              <div *ngIf="i >= 0">
+                <img class="partner-logo" src="{{partner.logo}}" alt="Partner Logo" srcset="">
+                <h3 class="organization">{{partner.organization}}</h3>
+                <p class="partner-description">{{partner.description}}</p>
+                <a class="partner-link" href="http://www.google.com">Website</a>
+              </div>
+            </ion-col>
+          </ion-row>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -126,17 +133,20 @@
   <div #survey id="survey" [className]="surveyPopIn ? 'survey' : 'off'">
     <ion-grid>
       <ion-row style="padding: 100px 0;" class="ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="6">
+        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="10">
           <h2>Survey</h2>
+        </ion-col>
+        <ion-col size-xs="11" size-sm="10" size-md="8" size-lg="6">
           <ion-list class="line-input">
             <!-- Post Suvery Questions -->
-            <h3>Please fill out the entire form to successfully submit the survey.</h3>
+            <h3 style="color: #faab71;">Please fill out the entire form to successfully submit the survey.</h3>
+
             <ion-item>
               <ion-input #email type="email" placeholder="Email"></ion-input>
             </ion-item>
 
             <!-- Question 1 -->
-            <ion-radio-group
+              <ion-radio-group
             required (ionChange)="question1Handler($event)">
             <ion-list-header>
               <h3>Question 1</h3>

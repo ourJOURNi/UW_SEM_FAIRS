@@ -9,17 +9,23 @@ ion-label {
   top: -4px;
   transition: 500ms;
   box-shadow: 1px 1px 26px rgb(0 0 0 / 10%);
+  .active-link {
+    transition: 0.2s;
+    font-size: 1.15em;
+    --background: #faa81b26;
+    border-left: 3px solid #faa71b;
+  }
   h1 {
     font-size: 1.4em;
     margin-left: 1em;
   }
-  ion-button {
+  .desktop-link {
     height: 70px;
-    // width: 80px;
-    font-size: 0.75em;
+    width: 84px;
+    font-size: 0.7em;
   }
   img {
-    height: 60px;
+    height: 35px;
     width: unset;
   }
 }

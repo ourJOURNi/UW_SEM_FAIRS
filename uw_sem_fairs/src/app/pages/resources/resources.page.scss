@@ -8,16 +8,17 @@ ion-content {
   top: -24px;
 }
 .background {
-  height: 600px;
-  border-radius: 0 0px 115px 0px;
-    border-bottom: 14px solid #FAA71b;
+  height: 400px;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 0 0px 115px 115px;
+  border-bottom: 14px solid #FAA71b;
   background-image:
-    linear-gradient(0deg, rgba(0,85,165,0.5) 10%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Large.png');
-  // background-position: 0px -150px;
-  background-repeat: none;
-  background-size: cover;
+    linear-gradient(0deg, rgba(0,85,165,0.5) 75%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Large.png');
+  background-size: auto 800px;
+  background-position-x: 200px;
+  background-position-y: -150px;
   background-attachment: fixed;
-  // background: lightblue;
 }
 .header {
   margin-top: 40px;
@@ -48,12 +49,15 @@ ion-content {
 }
 .filter {
   position: sticky;
+  height: 55px;
   top: 94px;
   z-index: 9999;
-  background: white;
-  padding: 0.9em 0 0 0;
+  background: #efefef;
+  box-shadow: inset 1px 1px 10px #d0d0d0;
+  padding: 1.9em 0 0 0;
+  margin-bottom: 38px;
     .filter-button {
-      --background: #0055a51c;
+      --background: #0303031c;
       --border-radius: 50px;
       --box-shadow: none;
       width: 80px;
@@ -64,10 +68,10 @@ ion-content {
       font-size: 0.55em;
       transition: 0.2s;
       position: relative;
-      top: -8px;
+      top: -12px;
     }
     .filter-button-active {
-      --background: #f57814;
+      --background: #faa71b;
       --border-radius: 50px;
       --border-style: solid;
       --border-width: 2px;
@@ -92,51 +96,61 @@ ion-content {
   bottom: 54px;
 }
 .resource{
-  margin: 10px;
-  height: 55px;
+  margin: 30px auto;
+  height: 75px;
   overflow: hidden;
-  background: #0055a5;
+  background: white;
   transition: 0.2s;
+  border-radius: 8px;
+  background: #e3f3ff;
+  border-left: 5px solid #0055a5;
+
   .name {
-    font-size: 0.9em;
+    font-size: 1.2em;
     margin-bottom: 32px;
-    color: white;
+    color: #222;
     transition: 0.2s;
   }
   img {
-    height: 50px;
+    height: 100px;
   }
   ion-icon {
-    font-size: 1.6em;
+    font-size: 2em;
     color: white;
     background: #0055a5;
     border-radius: 50px;
     position: relative;
-    top: 10px;
+    top: 16px;
     float: right;
     transition: 0.2s;
+  }
+  ion-button {
+    --background: #faa71b;
   }
 }
 .orange-button {
   margin-bottom: 100px;
 }
 .page-message {
+  background: #fff8ed;
+  border-left: 5px solid #faa71b;
   color: #333;
   margin: 2em auto;
-  font-size: 1.1em;
-  box-shadow: 1px 1px 68px #cecece;
+  border-radius: 5px;
+  font-size: 1.2em;
+  box-shadow: 1px 1px 17px #d5d5d5;
   padding: 1em;
 }
 @media screen and (max-width: 768px) {
   .filter {
-    height: 44px;
+    height: 35px;
     margin-bottom: 20px;
     border-radius: 0px;
     border: none;
     // box-shadow: 1px 1px 26px #22242859;
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 24px;
+    top: 10px;
     z-index: 9999;
     margin-top: 40px;
     // padding: 1.7em 0em 0.5em 0;
@@ -146,16 +160,18 @@ ion-content {
 @media screen and (max-width: 600px) {
   .background {
     height: 300px;
+    width: 100%;
     background-image:
-      linear-gradient(0deg, rgba(0,85,165,0.5) 10%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Small.png');
-    background-repeat: none;
-    background-size: auto 400px;
+      linear-gradient(0deg, rgba(0,85,165,0.65) 10%, rgba(250,167,27,0.2060679271708684) 100%), url('../../../assets/Keep-in-Touch-Picture-Small.png');
+    background-size: auto 53%;
+    background-position-x: 0px;
+    background-position-y: -102px;
     background-attachment: fixed;
-    border-radius: 0 0px 115px 0px;
+    border-radius: 0 0px 115px 115px;
     border-bottom: 14px solid #FAA71b;
     h1 {
       color: white;
-      background: #f57814;
+      background: #faa71b;
       width: 128px;
       border-radius: 5px;
       position: relative;
@@ -196,19 +212,22 @@ ion-content {
     color: #222;
   }
   .resource{
-    margin: 10px;
-    height: 55px;
+    margin: 29px auto;
+    height: 76px;
+    color: #222;
     overflow: hidden;
-    background: #0055a5;
+    background: #e3f3ff;
+    border-left: 5px solid #0055a5;
+
     transition: 0.2s;
     .name {
-      font-size: 0.9em;
+      font-size: 1.2em;
       margin-bottom: 32px;
-      color: white;
+      color: #222;
       transition: 0.2s;
     }
     img {
-      height: 50px;
+      height: 100px;
     }
     ion-icon {
       font-size: 1.6em;
@@ -219,9 +238,6 @@ ion-content {
       top: 10px;
       float: right;
       transition: 0.2s;
-    }
-    ion-button {
-      --background: #f47930;
     }
   }
 }

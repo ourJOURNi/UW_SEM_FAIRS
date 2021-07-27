@@ -25,7 +25,7 @@ export class FairStudentRegisterPage implements OnInit, OnDestroy {
   summary: string;
   fairName: string;
   studentObject = {
-    id: '',
+    fairID: '',
     name: '',
     email: '',
     school: '',
@@ -99,6 +99,7 @@ export class FairStudentRegisterPage implements OnInit, OnDestroy {
     'Turkey',
     'Veggie'
   ];
+  fairID: any;
 
   constructor(
     private modal: ModalController,
@@ -120,14 +121,9 @@ export class FairStudentRegisterPage implements OnInit, OnDestroy {
       phone: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]]
     });
 
-    this.studentObject.id = this.navParams.get('id');
-    this.city = this.navParams.get('city');
-    this.state = this.navParams.get('state');
-    this.zip = this.navParams.get('zip');
-    this.address = this.navParams.get('address');
-    this.fairName = this.navParams.get('fairName');
-    this.date = this.navParams.get('date');
-    this.summary = this.navParams.get('summary');
+    this.fairID = this.navParams.get('id');
+    console.log('fairID:');
+    console.log(this.fairID);
   }
 
   cancel() {
@@ -211,6 +207,7 @@ export class FairStudentRegisterPage implements OnInit, OnDestroy {
     }
   });
 
+  this.studentObject.fairID = this.fairID;
   this.studentObject.interests = JSON.stringify(this.studentInterests);
   this.studentObject.name = this.resgisterForm.value['name'];
   this.studentObject.email = this.resgisterForm.value['email'];

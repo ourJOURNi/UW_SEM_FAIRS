@@ -33,15 +33,15 @@ ion-grid {
     }
 }
 .landing-page-button {
-    --background: #fa8c1b;
+    --background: #faa71b;
     padding: 0.2em;
-    margin: 100px 0;
+    margin: 10px 0;
     position: relative;
     top: 50px;
-    width: 241px;
+    width: 250px;
     height: 64px;
     --border-radius: 50px;
-    font-size: 1em;
+    font-size: 1.15em;
 
 }
 .section-header {
@@ -186,6 +186,10 @@ ion-grid {
     height: auto;
     padding: 120px 0
 }
+.about-fyf { 
+    background-color: white;
+    font-size: 1.3em;
+}
 .fyf-ill {
     // background: #eee;
     height: 300px;
@@ -207,25 +211,25 @@ ion-grid {
 }
 .fyf-feature-desktop {
     background-color: white;
-    box-shadow: 1px 1px 22px #dcdcdc;
-    text-align: center;
-    margin: 0 auto;
-    height: 270px;
-    width: 270px;
-    padding: 1.2em;
-    border-radius: 250px;
-    border: 3px solid #0055a5;
+    min-height: 150px;
+    border-radius: 10px;
     font-size: 1.3em;
+    border-left: 7px #0055a5 solid;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
 
     ion-icon {
         color: #0055a5;
-        font-size: 2em;
+        font-size: 3em;
+        margin-top: 0.5em;
+    }
+    p {
+        font-size: 0.8em;
     }
 }
 .fyf-feature {
     padding: 0.3em;
     margin: 0.8em 0;
-    height: auto;
+    height: auto200px;
     border-radius: 10px;
     font-size: 1.1em;
     background: #f4faff;
@@ -250,67 +254,89 @@ ion-grid {
     }
 }
 .second-background-photo {
-    background-image:  url('../../../assets/photos/landing-page-photo.jpg'), linear-gradient(#eb01a5, #d13531);;
+    background-image:  url('../../../assets/photos/landing-page-photo.jpg');
 
-    height: 740px;
-    background-attachment: fixed;
-    background-position: center;
+    height: 400px;
+    // background-attachment: fixed;
+    // background-position: -635px 0;
+    margin: 1em 0.5em;
     background-size: cover;
     background-repeat: none;
 }
 .third-background-photo {
     background-image: url('../../../assets/photos/fair-photo-volunteer.jpg');
-    height: 740px;
-    background-attachment: fixed;
+    height: 510px;
+    margin: 1em 0.5em;
+    // background-attachment: fixed;
     background-position: center;
     // background-attachment: fixed;
     background-size: cover;
 }
+.fourth-background-photo {
+    background-image: url('../../../assets/photos/fair-photo-volunteer.jpg');
+    height: 510px;
+    margin: 1em 0.5em;
+    // background-attachment: fixed;
+    background-position: center;
+    // background-attachment: fixed;
+    background-size: cover;
+}
+.resources-desktop-header {
+    font-size: 2.5em;
+    color: white;
+}
+.all-resources-button {
+    display: inline;
+    --background: #faa71b;
+}
 .resources {
     height: auto;
     // background-color: #eee;
-    padding: 1em;
+    // padding: 1em;
+    background-color: #001b35;
 
     .resource {
         background: #fff;
         box-shadow: 1px 1px 10px rgb(0 0 0 / 13%);
         border-radius: 13px;
         margin-bottom: 42px;
-        padding: 1.2em;height: 55px;
-        overflow: hidden;
-        height: 435px;
-        margin: 1em;
+        margin-left: 1.8em;
+        padding: 1.2em;
+        min-height: 120px;
 
         h4 {
             color: #333;
             font-size: 2em;
             margin-bottom: 24px;
+            display: inline;
         }
         img {
             height: 40px;
+            display: inline;
         }
         p {
-            font-size: 1.3em;
+            color: #222;
+            font-size: 1em;
             margin-top: 24px;
             padding-bottom: 1em;
-            border-bottom: 1px solid #99999973;
         }
         ion-button {
             --background: #0055a5;
-            position: absolute;
-            bottom: 22px;
+            float: right;
         }
     }
 }
 .about {
-    // background-color: #fff;
-    padding: 0em;
+    
+    background-color: white;
+    padding: 6em 0.3em;
+    height: auto;
     h1 {
-        color: #0055a5;
+        color: #001b35;
         font-size: 2.5em;
     }
     p {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 }
 .about-item-wrapper {
@@ -318,6 +344,18 @@ ion-grid {
     box-shadow: 1px 1px 68px #cecece;
     padding: 2em;
     border-radius: 10px;
+}
+.about-uwsem {
+    background-color: white;
+    padding: 6em 0.3em;
+    height: auto;
+    h1 {
+        color: #001b35;
+        font-size: 2.5em;
+    }
+    p {
+        font-size: 1em;
+    }
 }
 .footer {
     background-color: #0055a5;

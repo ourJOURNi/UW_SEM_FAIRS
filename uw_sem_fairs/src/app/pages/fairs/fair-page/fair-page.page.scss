@@ -1,68 +1,11 @@
-.background-photo-partner{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-partner.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
-.background-photo-volunteer{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-volunteer.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
-.background-photo-student{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-students.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
-.background-photo-chaperone{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-chaporone.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
-
-.background-photo-partner-small{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-partner-small.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
-.background-photo-volunteer-small{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-volunteer-small.jpg');
-  background-size: cover;
-  background-position: 10% 0%;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
-.background-photo-student-small{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-students-small.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
-.background-photo-chaperone-small{
-  height: 250px;
-  background: url('../../../../assets/photos/fair-photo-chaporone-small.jpg');
-  background-size: cover;
-  background-position: 10% 0%;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
+.back-button {
+  --color: white;
+  --background: #0055a5;
+  height: 24px;
+  --border-radius: 5px;
+  width: 100px;
+  font-size: 0.5em;
+  font-weight: 600;
 }
 
 ion-fab-button {
@@ -175,11 +118,8 @@ h5{
   // }
 
   img {
-    height: 80px; width: 80px;
-    display: inline-block;
-    border-radius: 100px;
-    position: relative;
-    top: 10px;
+    // width: 90%;
+    margin: 0 auto;
   }
 
   .partner-link {
@@ -203,8 +143,10 @@ h5{
   .partner-description{
     position: relative;
     top: -10px;
-    font-size: 0.9em;
-    line-height: 1.3em;
+    height: 285px;
+    white-space: pre-wrap;
+    font-size: 1.2em;
+    line-height: 1.35em;
     color: #333;
   }
 
@@ -238,9 +180,10 @@ h5{
   }
 
   .survey-validation {
-    background: #edf3f8;
+    background: #f8f8f8;
     padding: 0.8em;
-    margin-top: 30px;
+    margin: 2em auto;
+    width: 200px;
   }
 }
 
@@ -253,8 +196,8 @@ h5{
     font-size: 1.1em;
     width: 4em;
     padding: 12px;
-    background: #faab71;
-    color: white;
+    background: white;
+    color: #0055a5;
     border: 2px solid #faab71;
   }
   h2{
@@ -269,6 +212,7 @@ ion-col {
 }
 ion-item:hover{
   font-weight: 600;
+  --color: #333;
 }
 
 h5 {
@@ -282,10 +226,10 @@ ion-list-header{
 ion-radio-group{
   h3 {
     margin-top: 80px;
-    color: #333;
+    color: #0055a5;
   }
   p {
-    color: #faa71b;
+    color: #333;
     font-size: 1.4em;
     font-weight: 600;
   }
@@ -297,7 +241,7 @@ ion-list {
 
 .green-button {
   height: 50px;
-  width: 100%;
+  width: 200px;
   font-size: 1em;
   --background: #2da847;
   --color: white;

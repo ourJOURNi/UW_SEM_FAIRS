@@ -2,23 +2,23 @@
     <ion-row class="ion-justify-content-center">
       <ion-col class="ion-hide-md-down"  size="12">
         <ion-toolbar id="desktop-toolbar">
-          <ion-buttons slot="start">
+          <ion-buttons style="height: 80px;" slot="start">
             <ion-button (click)="homePage()">
-              <img style="padding-left: 40px;" src="../../../assets/United_Way_Logo_4.png" alt="" srcset="">
+              <img style="padding-left: 40px;" src="../../../assets/United_Way_Logo_4.png" alt="United Way Logo">
               <h1>United Way SEM Fairs</h1>
             </ion-button>
           </ion-buttons>
           <ion-buttons slot="end">
-            <ion-button [routerLink]="['/home']">
+            <ion-button class="desktop-link" routerLinkActive="active-link" [routerLink]="['/home']">
               Home
             </ion-button>
-            <ion-button [routerLink]="['/resources']">
+            <ion-button class="desktop-link" routerLinkActive="active-link" [routerLink]="['/resources']">
               Resources
             </ion-button>
-            <ion-button [routerLink]="['/selection']">
+            <ion-button class="desktop-link" routerLinkActive="active-link" [routerLink]="['/selection']">
               Fairs
             </ion-button>
-            <ion-button  style="padding-right: 40px;" href="https://findyourfuturesem.org">
+            <ion-button class="desktop-link" routerLinkActive="active-link"  style="padding-right: 40px;" href="https://findyourfuturesem.org">
               FYF
             </ion-button>
           </ion-buttons>

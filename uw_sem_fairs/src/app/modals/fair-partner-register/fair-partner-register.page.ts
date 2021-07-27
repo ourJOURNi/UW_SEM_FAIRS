@@ -66,16 +66,16 @@ export class FairPartnerRegisterPage implements OnInit, OnDestroy {
 
     ngOnInit() {
     this.resgisterForm = this.formBuilder.group({
-      name: ['Eddie', Validators.required],
+      name: ['Eddie Taliaferro', Validators.required],
       email: ['eddielacrosse2@gmail.com', [Validators.required, Validators.email]],
-      phone: ['Journi', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]],
-      organization: ['7342237792', [Validators.required]],
+      phone: ['7342237792', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]{10}')]],
+      organization: ['Journi', [Validators.required]],
       url: ['google.com', [Validators.required]],
       description: ['This is my description', [Validators.required]],
       colleagues: ['Eddie, Erin, Tracy, Mekco', [Validators.required]],
     });
 
-    this.partnerObject.id = this.navParams.get('id');
+    this.partnerObject.id = this.navParams.get('_id');
     }
 
     cancel() {
@@ -141,7 +141,7 @@ async cropPhoto(uploadedPhotoURL) {
 }
 
  registerPartner() {
-  // this.registered = true;
+  this.registered = true;
   this.uploadedPhoto = true;
   const formData = new FormData();
   const photoFile = new File([this.dataURLtoBlob(this.uploadedPhotoURL)], 'logo.png');

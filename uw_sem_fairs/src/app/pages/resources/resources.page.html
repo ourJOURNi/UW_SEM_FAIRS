@@ -81,7 +81,7 @@
     <!-- Filter Toolbar -->
     <ion-row class="ion-justify-content-center">
       <ion-col style="margin-top: 1em;" size-xs="11" size-sm="10" size-md="9" size-lg="6" size-xl="5">
-        <p class="page-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi pariatur obcaecati voluptate alias, perferendis voluptatum illo dolorem, fugiat assumenda commodi aliquam quo molestiae quidem? Explicabo hic nesciunt rem veniam delectus?</p>
+        <p class="page-message">Welcome to the Resources Page! Here, you will be able to find information for really helpful organizations in the Southeastern Michigan Area. If you like any of these organiztions, please visit their websites and contact them directly.</p>
       </ion-col>
     </ion-row>
     <ion-row class="filter ion-justify-content-center">
@@ -114,21 +114,23 @@
     </div> -->
 
     <!-- Resources -->
-    <ion-row id="resources" class="ion-justify-content-center">
+    <ion-row id="resources" style="margin-bottom: 200px;" class="ion-justify-content-center">
       <div style="margin-bottom: 54px;"></div>
       <ion-col class="ion-align-items-center" size-xs="11" size-sm="10" size-md="9" size-lg="6" size-xl="5">
         <ion-row #resourceList class="resource" *ngFor="let resource of loadedResources; index as i">
           <ion-row class="ion-justify-content-center">
             <ion-col size="9">
               <h2 class="name">{{resource.name}}</h2>
+            </ion-col>
+            <ion-col class="ion-align-items-center ion-float-left" size="2">
+              <ion-icon id="dropdown-icon" (click)="resourceToggle(i, resource)" name="chevron-down-circle-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="11">
               <img src="{{resource.logo}}" alt="">
               <p class="description">{{resource.description}}</p>
               <ion-button class="blue-button link" href="{{resource.url}}" target="_blank">
                 Website
               </ion-button>
-            </ion-col>
-            <ion-col class="ion-align-items-center ion-float-left" size="2">
-              <ion-icon id="dropdown-icon" (click)="resourceToggle(i, resource)" name="chevron-down-circle-outline"></ion-icon>
             </ion-col>
           </ion-row>
         </ion-row>

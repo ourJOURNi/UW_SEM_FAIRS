@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit, ElementRef, ChangeDetectorRef,  ChangeDetectionStrategy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController, NavParams } from '@ionic/angular';
 import { format } from 'date-fns';
 import { FairChaperoneRegisterPage } from 'src/app/modals/fair-chaperone-register/fair-chaperone-register.page';
@@ -76,6 +76,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private modal: ModalController,
+    private router: Router,
     private changeDetectorRef: ChangeDetectorRef,
     private fairs: FairsService) {
      }
@@ -89,7 +90,6 @@ export class FairPagePage implements OnInit, AfterViewInit {
 
   }
   getFairDetails() {
-    // this.id = id;
     let usertype  = this.activatedRoute.snapshot.paramMap.get('usertype');
     this.usertype = usertype;
 
@@ -100,6 +100,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
     this.fairs.getFair(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(
       data => {
         console.log(data);
+        this.id = this.activatedRoute.snapshot.paramMap.get('id');
         this.usertype = usertype;
         this.title = data['title'];
         this.date = format(new Date(data['date']), 'hh:mm a, MMMM dd, yyyy');
@@ -110,7 +111,15 @@ export class FairPagePage implements OnInit, AfterViewInit {
         this.summary = data['summary'];
         this.agenda = data['agenda'];
         this.faqInfo = data['faq'];
-        this.partners = data['partners'];
+
+        // Filter out the partners that have NOT been verified.
+        let initialPartners = data['partners'];
+        this.partners = [];
+        initialPartners.forEach(p => {
+          if(p.verified) {
+            this.partners.push(p);
+          }
+        });
         this.description = data['description'];
 
         switch (usertype) {
@@ -127,6 +136,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
             this.boothPartners = true;
             // set survey to false until surveys have to be pushed out posts surcey
             this.survey = true;
+            this.agenda = data['chaperoneAgenda'];
             parking.style.height = '0px';
             faq.style.height = '0px';
             break;
@@ -136,6 +146,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
             this.faq = true;
             // set survey to false until surveys have to be pushed out posts surcey
             this.survey = true;
+            this.agenda = data['volunteerAgenda'];
             booth.style.height = '0px';
             break;
           case 'partner':
@@ -144,6 +155,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
             this.faq = true;
             // set survey to false until surveys have to be pushed out posts surcey
             this.survey = true;
+            this.agenda = data['partnerAgenda'];
             booth.style.height = '0px';
             break;
           default:
@@ -158,6 +170,10 @@ export class FairPagePage implements OnInit, AfterViewInit {
 
   submitSurvey() {
     console.log(this.surveyObject);
+  }
+
+  backToSelection() {
+    this.router.navigateByUrl('selection')
   }
 
   question1Handler(e) {
@@ -239,13 +255,7 @@ export class FairPagePage implements OnInit, AfterViewInit {
       const registerModalConfig = await this.modal.create({
         component: FairStudentRegisterPage,
         componentProps: {
-          id,
-          city: this.city,
-          state: this.state,
-          zip: this.zip,
-          address: this.address,
-          fairName: this.fairName,
-          date: this.date
+          id: this.id
         }
 
       });
