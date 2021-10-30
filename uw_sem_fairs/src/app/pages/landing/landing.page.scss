@@ -60,7 +60,7 @@ ion-grid {
     background-attachment: fixed;
     border-radius: 0 0px 115px 0px;
     border-bottom: 14px solid #FAA71b;
-    height: 800px;
+    height: 600px;
     z-index: 9999;
     opacity: 0;
     transition: ease-in;
@@ -184,7 +184,7 @@ ion-grid {
 .fyf {
     // background-color: #ccc;
     height: auto;
-    padding: 120px 0
+    padding: 220px 0 120px 0;
 }
 .about-fyf { 
     background-color: white;
@@ -223,7 +223,8 @@ ion-grid {
         margin-top: 0.5em;
     }
     p {
-        font-size: 0.8em;
+        font-size: 1em;
+        min-height: 105px;
     }
 }
 .fyf-feature {
